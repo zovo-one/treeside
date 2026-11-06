@@ -1,0 +1,224 @@
+/* ============================================================================
+ * options.css — TreeSide Options page styles.
+ *
+ * Built on top of treeside-base.css (loaded via <link> in options.html).
+ *
+ * WCAG AA (per memory):
+ *   - #6C5CE7 fails AA on dark surfaces (3.91:1). Use #8B7CF0 (5.34:1) on dark.
+ *   - #6B7280 on #F1F2F4 fails AA (3.67:1). Use #4B5563 (4.74:1) on tinted light.
+ * ========================================================================== */
+
+:root {
+  --treeside-primary: var(--zovo-primary);
+  --treeside-primary-dark: var(--zovo-primary-dark);
+  --treeside-bg: var(--zovo-bg);
+  --treeside-surface: var(--zovo-surface);
+  --treeside-text: var(--zovo-text);
+  --treeside-text-secondary: var(--zovo-text-secondary);
+  --treeside-border: var(--zovo-border);
+  --treeside-radius: var(--zovo-radius-card, 6px);
+  --treeside-radius-btn: var(--zovo-radius-btn, 4px);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) {
+    --treeside-primary: #8B7CF0;
+    --treeside-primary-dark: #6C5CE7;
+  }
+}
+:root[data-theme='dark'] {
+  --treeside-primary: #8B7CF0;
+  --treeside-primary-dark: #6C5CE7;
+}
+
+.treeside-options-body {
+  margin: 0;
+  font-family: var(--zovo-font);
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--treeside-text);
+  background: var(--treeside-bg);
+  -webkit-font-smoothing: antialiased;
+}
+
+.treeside-options {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  min-height: 100vh;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+/* Sidebar. */
+.treeside-options__sidebar {
+  padding: 24px 16px;
+  border-right: 1px solid var(--treeside-border);
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+.treeside-options__brand {
+  margin: 0;
+  font-size: 18px;
+  color: var(--treeside-text);
+}
+.treeside-options__sidebar nav {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.treeside-options__sidebar nav a {
+  color: var(--treeside-text-secondary);
+  text-decoration: none;
+  font-size: 13px;
+  padding: 6px 10px;
+  border-radius: var(--treeside-radius-btn);
+}
+.treeside-options__sidebar nav a:hover {
+  background: var(--treeside-surface);
+  color: var(--treeside-text);
+}
+.treeside-options__sidebar footer {
+  margin-top: auto;
+  font-size: 12px;
+}
+.treeside-options__sidebar footer a {
+  color: var(--treeside-text-secondary);
+  text-decoration: none;
+}
+
+/* Main. */
+.treeside-options__main {
+  padding: 32px 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.treeside-options__section {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.treeside-options__section h2 {
+  margin: 0;
+  font-size: 18px;
+  color: var(--treeside-text);
+}
+.treeside-options__sub {
+  margin: 0;
+  font-size: 13px;
+  color: var(--treeside-text-secondary);
+}
+
+/* Field. */
+.treeside-options__field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.treeside-options__label {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--treeside-text);
+}
+.treeside-options__hint {
+  margin: 0;
+  font-size: 12px;
+  color: var(--treeside-text-secondary);
+}
+.treeside-options__hint a {
+  color: var(--treeside-primary);
+  text-decoration: none;
+}
+.treeside-options__value {
+  font-size: 13px;
+  color: var(--treeside-text);
+}
+
+/* Segmented control. */
+.treeside-options__segmented {
+  display: inline-flex;
+  border: 1px solid var(--treeside-border);
+  border-radius: var(--treeside-radius-btn);
+  overflow: hidden;
+  background: var(--treeside-surface);
+}
+.treeside-options__seg {
+  background: transparent;
+  border: none;
+  padding: 6px 12px;
+  font-size: 13px;
+  color: var(--treeside-text);
+  cursor: pointer;
+  border-right: 1px solid var(--treeside-border);
+}
+.treeside-options__seg:last-child {
+  border-right: none;
+}
+.treeside-options__seg--on {
+  background: var(--treeside-primary);
+  color: #FFFFFF;
+}
+.treeside-options__seg--locked {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* License. */
+.treeside-options__license-active p {
+  margin: 0 0 8px;
+}
+.treeside-options__license-input {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  max-width: 360px;
+}
+.treeside-options__license-input input {
+  padding: 8px 10px;
+  border: 1px solid var(--treeside-border);
+  border-radius: var(--treeside-radius-btn);
+  background: var(--treeside-surface);
+  color: var(--treeside-text);
+  font-size: 13px;
+}
+.treeside-options__license-input button,
+.treeside-options__license-active button,
+.treeside-options__actions button {
+  padding: 8px 14px;
+  border: 1px solid var(--treeside-border);
+  border-radius: var(--treeside-radius-btn);
+  background: var(--treeside-surface);
+  color: var(--treeside-text);
+  cursor: pointer;
+  font-size: 13px;
+}
+.treeside-options__license-input button:hover,
+.treeside-options__license-active button:hover,
+.treeside-options__actions button:hover {
+  background: var(--treeside-bg);
+}
+.treeside-options__error {
+  margin: 0;
+  color: #EF4444;
+  font-size: 12px;
+}
+.treeside-options__ok {
+  margin: 0;
+  color: #10B981;
+  font-size: 12px;
+}
+.treeside-options__refund {
+  margin: 0;
+  font-size: 11px;
+  color: var(--treeside-text-secondary);
+  font-style: italic;
+}
+
+/* Data section. */
+.treeside-options__actions {
+  display: flex;
+  gap: 8px;
+}
+

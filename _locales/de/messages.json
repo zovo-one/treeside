@@ -1,0 +1,397 @@
+{
+  "extName": {
+    "message": "TreeSide - Vertikale Tabs im Chrome-Seitenpanel",
+    "description": "Extension name shown in chrome://extensions and the Chrome Web Store listing title."
+  },
+  "extDesc": {
+    "message": "Baumförmige Tabs im Chrome-Seitenpanel. Ziehen zum Umhängen, Zweige einklappen, Fuzzy-Suche. Privat by design.",
+    "description": "Extension description shown in chrome://extensions and the Chrome Web Store listing short summary (<=132 chars)."
+  },
+  "actionTitle": {
+    "message": "TreeSide - Baumstruktur der Tabs öffnen",
+    "description": "Tooltip for the toolbar action icon."
+  },
+  "permTabsJustification": {
+    "message": "Liest Tab-Metadaten (Titel, URL, Opener, Gruppe), um den Baum aufzubauen und zu aktualisieren. Ermöglicht Klick-Fokus, Mittelklick-Schließen und Zweig-Schließen. Keine DOM-Lesezugriffe.",
+    "description": "CWS reviewer justification for the tabs permission."
+  },
+  "permTabGroupsJustification": {
+    "message": "Liest und bearbeitet die nativen Tab-Gruppen von Chrome (Farbe, Name, Mitgliedschaft), damit der Baum Gruppenköpfe anzeigt und die Gruppenidentität beim Umhängen erhält bleibt.",
+    "description": "CWS reviewer justification for the tabGroups permission."
+  },
+  "permSidePanelJustification": {
+    "message": "Öffnet das Seitenpanel. Die gesamte Produktoberfläche lebt im nativen Side Panel von Chrome.",
+    "description": "CWS reviewer justification for the sidePanel permission."
+  },
+  "permStorageJustification": {
+    "message": "Speichert Nutzereinstellungen, manuelle Umhängungen und Einklappzustände in storage.local. Kein Seiteninhalt. Keine Synchronisation.",
+    "description": "CWS reviewer justification for the storage permission."
+  },
+
+  "treeside_loading": {
+    "message": "Tab-Baum wird geladen...",
+    "description": "Side panel loading state before bootstrap completes."
+  },
+  "treeside_panel_aria_label": {
+    "message": "TreeSide Tab-Baum",
+    "description": "Accessible label for the tree root."
+  },
+  "treeside_untitled_tab": {
+    "message": "Tab ohne Titel",
+    "description": "Fallback label for a tab with no title and no URL."
+  },
+  "treeside_audible_aria": {
+    "message": "Dieser Tab gibt Audio wieder.",
+    "description": "Screen-reader label for the speaker icon on an audible tab."
+  },
+  "treeside_expand_aria": {
+    "message": "Zweig für Tab $1 aufklappen",
+    "description": "Screen-reader label for the expand chevron. $1 is the tab id.",
+    "placeholders": { "tabId": { "content": "$1" } }
+  },
+  "treeside_collapse_aria": {
+    "message": "Zweig für Tab $1 einklappen",
+    "description": "Screen-reader label for the collapse chevron. $1 is the tab id.",
+    "placeholders": { "tabId": { "content": "$1" } }
+  },
+  "treeside_close_tab_aria": {
+    "message": "Diesen Tab schließen",
+    "description": "Screen-reader label for the close-tab hover action."
+  },
+  "treeside_close_tab_title": {
+    "message": "Tab schließen",
+    "description": "Title attribute for the close-tab hover action."
+  },
+  "treeside_close_branch_aria": {
+    "message": "Diesen Tab und seine $1 Nachfahren schließen",
+    "description": "Screen-reader label for the close-branch hover action. $1 is the descendant count.",
+    "placeholders": { "count": { "content": "$1" } }
+  },
+  "treeside_close_branch_title": {
+    "message": "Zweig schließen",
+    "description": "Title attribute for the close-branch hover action."
+  },
+  "treeside_group_toggle_aria": {
+    "message": "Gruppe umschalten",
+    "description": "Screen-reader label for the group collapse toggle."
+  },
+  "treeside_group_unnamed": {
+    "message": "Unbenannte Gruppe",
+    "description": "Fallback label for a tab group with no title."
+  },
+
+  "treeside_search_placeholder": {
+    "message": "Tabs nach Titel oder URL suchen...",
+    "description": "Placeholder for the search input."
+  },
+  "treeside_search_aria": {
+    "message": "Tabs nach Titel oder URL filtern",
+    "description": "Accessible label for the search input."
+  },
+  "treeside_search_clear_aria": {
+    "message": "Suche zurücksetzen",
+    "description": "Screen-reader label for the search clear button."
+  },
+
+  "treeside_empty_body": {
+    "message": "Noch keine Tabs in diesem Fenster.",
+    "description": "Empty-state body text."
+  },
+  "treeside_empty_hint": {
+    "message": "Öffnen Sie einen Tab, um zu beginnen.",
+    "description": "Empty-state hint text."
+  },
+
+  "treeside_confirm_title": {
+    "message": "$1 Tabs schließen?",
+    "description": "Confirm dialog title. $1 is the total count (parent + descendants).",
+    "placeholders": { "count": { "content": "$1" } }
+  },
+  "treeside_confirm_body": {
+    "message": "Dies schließt den Eltern-Tab und seine $1 Nachfahren. Diese Aktion kann nicht rückgängig gemacht werden.",
+    "description": "Confirm dialog body. $1 is the total count.",
+    "placeholders": { "count": { "content": "$1" } }
+  },
+  "treeside_confirm_ok": {
+    "message": "Alle schließen",
+    "description": "Confirm dialog confirm button."
+  },
+  "treeside_confirm_cancel": {
+    "message": "Abbrechen",
+    "description": "Confirm dialog cancel button."
+  },
+
+  "treeside_options_nav_aria": {
+    "message": "TreeSide-Optionen-Navigation",
+    "description": "Accessible label for the options sidebar navigation."
+  },
+  "treeside_options_nav_general": {
+    "message": "Allgemein",
+    "description": "Sidebar nav label for the General section."
+  },
+  "treeside_options_nav_license": {
+    "message": "Pro-Lizenz",
+    "description": "Sidebar nav label for the Pro License section."
+  },
+  "treeside_options_nav_data": {
+    "message": "Daten",
+    "description": "Sidebar nav label for the Data section."
+  },
+  "treeside_options_nav_about": {
+    "message": "Über",
+    "description": "Sidebar nav label for the About section."
+  },
+  "treeside_options_footer_built_by": {
+    "message": "Erstellt von zovo.one",
+    "description": "Footer link in the options page."
+  },
+
+  "treeside_options_title_general": {
+    "message": "Erscheinungsbild",
+    "description": "Title for the General section."
+  },
+  "treeside_options_theme_label": {
+    "message": "Design",
+    "description": "Options label for the theme segmented control."
+  },
+  "treeside_options_theme_system": {
+    "message": "System",
+    "description": "Options theme choice: follow the OS setting."
+  },
+  "treeside_options_theme_light": {
+    "message": "Hell",
+    "description": "Options theme choice: force light."
+  },
+  "treeside_options_theme_dark": {
+    "message": "Dunkel",
+    "description": "Options theme choice: force dark."
+  },
+  "treeside_options_theme_aria": {
+    "message": "Design-Einstellung",
+    "description": "Accessible radiogroup label for the theme segmented control."
+  },
+  "treeside_options_accent_label": {
+    "message": "Akzentfarbe",
+    "description": "Options label for the accent segmented control."
+  },
+  "treeside_options_accent_violet": {
+    "message": "Violett",
+    "description": "Options accent choice: violet (free default)."
+  },
+  "treeside_options_accent_teal": {
+    "message": "Türkis",
+    "description": "Options accent choice: teal (Pro)."
+  },
+  "treeside_options_accent_amber": {
+    "message": "Bernstein",
+    "description": "Options accent choice: amber (Pro)."
+  },
+  "treeside_options_accent_aria": {
+    "message": "Akzentfarben-Einstellung",
+    "description": "Accessible radiogroup label for the accent segmented control."
+  },
+  "treeside_options_pro_hint": {
+    "message": "Pro-Funktion.",
+    "description": "Inline hint on locked Pro affordances."
+  },
+  "treeside_options_pro_cta": {
+    "message": "Pro-Pläne ansehen",
+    "description": "CTA link text to the pricing page."
+  },
+  "treeside_options_row_height_label": {
+    "message": "Zeilenhöhe",
+    "description": "Options label for the row height segmented control."
+  },
+  "treeside_options_row_height_comfortable": {
+    "message": "Komfortabel",
+    "description": "Options row-height choice: 32px (default)."
+  },
+  "treeside_options_row_height_compact": {
+    "message": "Kompakt",
+    "description": "Options row-height choice: 28px."
+  },
+  "treeside_options_row_height_aria": {
+    "message": "Zeilenhöhen-Einstellung",
+    "description": "Accessible radiogroup label for the row height segmented control."
+  },
+  "treeside_options_confirm_threshold_label": {
+    "message": "Bestätigung verlangen, bevor Zweige mit dieser Tab-Anzahl oder mehr geschlossen werden",
+    "description": "Options label for the confirm-threshold slider."
+  },
+
+  "treeside_options_title_license": {
+    "message": "Zovo-Pro-Schlüssel aktivieren oder entfernen",
+    "description": "Title for the Pro License section."
+  },
+  "treeside_options_sub_license": {
+    "message": "Eine Pro-Lizenz schaltet dauerhafte Baum-Snapshots, Baum-Vorlagen, benutzerdefinierte Designs und Tastatur-Power-Tools frei. Eine Zahlung aktiviert Pro für immer in dieser Erweiterung.",
+    "description": "Subtitle for the Pro License section."
+  },
+  "treeside_options_license_active_prefix": {
+    "message": "Pro aktiv.",
+    "description": "Prefix shown when a Pro license is active."
+  },
+  "treeside_options_license_active_lifetime": {
+    "message": "Lebenslange Lizenz.",
+    "description": "License status line for a lifetime license."
+  },
+  "treeside_options_license_deactivate": {
+    "message": "Deaktivieren",
+    "description": "Button: deactivate the current license."
+  },
+  "treeside_options_license_deactivated": {
+    "message": "Lizenz deaktiviert. Zurück zur kostenlosen Stufe.",
+    "description": "Status message after the user deactivates a license."
+  },
+  "treeside_options_license_key_label": {
+    "message": "Lizenzschlüssel",
+    "description": "Accessible label for the license-key input."
+  },
+  "treeside_options_license_placeholder": {
+    "message": "ZOVO-XXXX-XXXX-XXXX-XXXX",
+    "description": "Placeholder text for the license-key input."
+  },
+  "treeside_options_license_activate": {
+    "message": "Aktivieren",
+    "description": "Button: activate the entered license key."
+  },
+  "treeside_options_license_verifying": {
+    "message": "Wird überprüft...",
+    "description": "Button busy state while the license key is being verified."
+  },
+  "treeside_options_license_empty": {
+    "message": "Bitte geben Sie zuerst einen Lizenzschlüssel ein.",
+    "description": "Error shown when activating with an empty input."
+  },
+  "treeside_options_license_activated": {
+    "message": "Lizenz aktiviert. Pro freigeschaltet.",
+    "description": "Success message after activation."
+  },
+  "treeside_options_license_failed": {
+    "message": "Dieser Schlüssel konnte nicht verifiziert werden. Prüfen Sie den Schlüssel und versuchen Sie es erneut.",
+    "description": "Error shown when the license server rejects the key."
+  },
+  "treeside_options_license_error": {
+    "message": "Verifizierung fehlgeschlagen. Bitte in einem Moment erneut versuchen.",
+    "description": "Error shown when the license verify endpoint is unreachable."
+  },
+  "treeside_options_license_buy": {
+    "message": "Pro-Pläne ansehen",
+    "description": "Link to the pricing page."
+  },
+  "treeside_options_license_refund": {
+    "message": "14 Tage Geld-zurück-Garantie. Wenn Pro es nicht wert ist, erstatten wir ohne Rückfragen.",
+    "description": "Refund promise under the Pro License section."
+  },
+
+  "treeside_options_title_data": {
+    "message": "Ihre Daten bleiben auf diesem Gerät",
+    "description": "Title for the Data section."
+  },
+  "treeside_options_sub_data": {
+    "message": "Exportieren oder löschen Sie alles, was TreeSide auf diesem Gerät gespeichert hat. Keine Cloud, keine Synchronisation.",
+    "description": "Subtitle for the Data section."
+  },
+  "treeside_options_data_export": {
+    "message": "Meine Daten exportieren",
+    "description": "Button: export stored preferences and overrides to a JSON file."
+  },
+  "treeside_options_data_delete": {
+    "message": "Alle Daten löschen",
+    "description": "Button: delete everything TreeSide has stored on this device."
+  },
+  "treeside_options_privacy_delete_confirm": {
+    "message": "Alle TreeSide-Daten von diesem Gerät löschen? Diese Aktion kann nicht rückgängig gemacht werden.",
+    "description": "window.confirm prompt before deleting all data."
+  },
+  "treeside_options_privacy_delete_ok": {
+    "message": "Alle TreeSide-Daten von diesem Gerät gelöscht.",
+    "description": "Success message after deleting all data."
+  },
+  "treeside_options_privacy_delete_err": {
+    "message": "Löschen fehlgeschlagen. Bitte erneut versuchen.",
+    "description": "Error shown when the delete operation fails."
+  },
+
+  "treeside_options_title_about": {
+    "message": "Über TreeSide",
+    "description": "Title for the About section."
+  },
+  "treeside_options_about_disclaimer": {
+    "message": "TreeSide ist ein unabhängiges Tool von Zovo. Es liest ausschließlich die Tab-Metadaten, die Chrome ohnehin pflegt (Titel, URL, Opener-Beziehung, Gruppenzugehörigkeit), um den Baum zu zeichnen und zu bearbeiten. Es liest nie Seiteninhalte, injiziert nie Skripte und stellt keine Netzwerkanfrage, außer wenn Sie ausdrücklich einen Lizenzschlüssel eingeben.",
+    "description": "Independence and privacy disclaimer in the About section."
+  },
+
+  "treeside_onb_eyebrow": {
+    "message": "TreeSide",
+    "description": "Brand eyebrow shown at the top of every onboarding page."
+  },
+  "treeside_onb_page1_heading": {
+    "message": "Ihre Tabs als Baum",
+    "description": "Onboarding page 1 main heading."
+  },
+  "treeside_onb_page1_sub": {
+    "message": "TreeSide zeigt die Tabs des aktuellen Fensters als einklappbaren Eltern-Kind-Baum, basierend auf dem Opener jedes Tabs. Keine Content-Scripts, keine Host-Berechtigungen, keine Seiten-Lesezugriffe."
+  },
+  "treeside_onb_page2_heading": {
+    "message": "Ziehen zum Umhängen",
+    "description": "Onboarding page 2 main heading."
+  },
+  "treeside_onb_page2_sub": {
+    "message": "Ziehen Sie einen Tab auf einen anderen, um ihn zu dessen Kind zu machen. Ihre Umhängungen bleiben über Sessions erhalten, sodass die von Ihnen aufgebaute Hierarchie bestehen bleibt."
+  },
+  "treeside_onb_page3_heading": {
+    "message": "Suchen und einklappen",
+    "description": "Onboarding page 3 main heading."
+  },
+  "treeside_onb_page3_sub": {
+    "message": "Untersequenzen-Fuzzysuche nach Titel oder URL. Klappen Sie Zweige ein, die Sie gerade nicht benötigen; sie bleiben eingeklappt, wenn Sie zurückkehren."
+  },
+  "treeside_onb_page4_heading": {
+    "message": "Zweige sicher schließen",
+    "description": "Onboarding page 4 main heading."
+  },
+  "treeside_onb_page4_sub": {
+    "message": "Ein Klick schließt einen Tab und alle seine Nachfahren. Zweige mit fünf oder mehr Tabs fragen zuerst nach Bestätigung."
+  },
+  "treeside_onb_page5_heading": {
+    "message": "Pro: Snapshots, Vorlagen, Designs",
+    "description": "Onboarding page 5 main heading."
+  },
+  "treeside_onb_page5_sub": {
+    "message": "Die kostenlose Stufe bietet für immer alles davon. Pro ergänzt Crash-Recovery-Snapshots, Baum-Vorlagen, benutzerdefinierte Designs und Tastatur-Power-Tools. Eine Zahlung; für immer aktiv."
+  },
+  "treeside_onb_skip": {
+    "message": "Setup überspringen",
+    "description": "Skip link in the onboarding footer."
+  },
+  "treeside_onb_back": {
+    "message": "Zurück",
+    "description": "Back button in the onboarding footer."
+  },
+  "treeside_onb_next": {
+    "message": "Weiter",
+    "description": "Next button in the onboarding footer."
+  },
+  "treeside_onb_done": {
+    "message": "Fertig",
+    "description": "Done button in the onboarding footer (final page)."
+  },
+  "treeside_onb_step_aria": {
+    "message": "Onboarding-Schritte",
+    "description": "Accessible label for the onboarding step indicator."
+  },
+  "treeside_onb_step_position_aria": {
+    "message": "Schritt $1",
+    "description": "Accessible label for an individual step dot. $1 is the 1-based page index.",
+    "placeholders": { "page": { "content": "$1" } }
+  },
+  "treeside_onb_page_of": {
+    "message": "$1 von $2",
+    "description": "Page indicator text in the onboarding footer. $1 is current page, $2 is total pages.",
+    "placeholders": {
+      "current": { "content": "$1" },
+      "total": { "content": "$2" }
+    }
+  }
+}

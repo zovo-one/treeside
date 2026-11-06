@@ -1,0 +1,397 @@
+{
+  "extName": {
+    "message": "TreeSide - Abas verticais no painel lateral do Chrome",
+    "description": "Extension name shown in chrome://extensions and the Chrome Web Store listing title."
+  },
+  "extDesc": {
+    "message": "Abas em árvore no painel lateral do Chrome. Arraste para repaiantar, recolha ramos, busca difusa. Privado por design.",
+    "description": "Extension description shown in chrome://extensions and the Chrome Web Store listing short summary (<=132 chars)."
+  },
+  "actionTitle": {
+    "message": "TreeSide - Abrir a árvore de abas",
+    "description": "Tooltip for the toolbar action icon."
+  },
+  "permTabsJustification": {
+    "message": "Lê os metadados das abas (título, URL, opener, grupo) para construir e atualizar a árvore. Habilita clicar-para-focar, clique-com-botão-do-meio-para-fechar e fechar-ramo. Sem leitura de DOM da página.",
+    "description": "CWS reviewer justification for the tabs permission."
+  },
+  "permTabGroupsJustification": {
+    "message": "Lê e edita os grupos de abas nativos do Chrome (cor, nome, pertencimento) para que a árvore mostre os cabeçalhos de grupo e preserve a identidade dos grupos em operações de repaientamento.",
+    "description": "CWS reviewer justification for the tabGroups permission."
+  },
+  "permSidePanelJustification": {
+    "message": "Abre a superfície do painel lateral. Toda a interface do produto vive no painel lateral nativo do Chrome.",
+    "description": "CWS reviewer justification for the sidePanel permission."
+  },
+  "permStorageJustification": {
+    "message": "Persiste as preferências do usuário, os repaientamentos manuais e o estado de recolhimento em storage.local. Sem conteúdo de página. Sem sincronização.",
+    "description": "CWS reviewer justification for the storage permission."
+  },
+
+  "treeside_loading": {
+    "message": "Carregando sua árvore de abas...",
+    "description": "Side panel loading state before bootstrap completes."
+  },
+  "treeside_panel_aria_label": {
+    "message": "Árvore de abas TreeSide",
+    "description": "Accessible label for the tree root."
+  },
+  "treeside_untitled_tab": {
+    "message": "Aba sem título",
+    "description": "Fallback label for a tab with no title and no URL."
+  },
+  "treeside_audible_aria": {
+    "message": "Esta aba está reproduzindo áudio.",
+    "description": "Screen-reader label for the speaker icon on an audible tab."
+  },
+  "treeside_expand_aria": {
+    "message": "Expandir ramo para a aba $1",
+    "description": "Screen-reader label for the expand chevron. $1 is the tab id.",
+    "placeholders": { "tabId": { "content": "$1" } }
+  },
+  "treeside_collapse_aria": {
+    "message": "Recolher ramo para a aba $1",
+    "description": "Screen-reader label for the collapse chevron. $1 is the tab id.",
+    "placeholders": { "tabId": { "content": "$1" } }
+  },
+  "treeside_close_tab_aria": {
+    "message": "Fechar esta aba",
+    "description": "Screen-reader label for the close-tab hover action."
+  },
+  "treeside_close_tab_title": {
+    "message": "Fechar aba",
+    "description": "Title attribute for the close-tab hover action."
+  },
+  "treeside_close_branch_aria": {
+    "message": "Fechar esta aba e seu(s) $1 descendente(s)",
+    "description": "Screen-reader label for the close-branch hover action. $1 is the descendant count.",
+    "placeholders": { "count": { "content": "$1" } }
+  },
+  "treeside_close_branch_title": {
+    "message": "Fechar ramo",
+    "description": "Title attribute for the close-branch hover action."
+  },
+  "treeside_group_toggle_aria": {
+    "message": "Alternar grupo",
+    "description": "Screen-reader label for the group collapse toggle."
+  },
+  "treeside_group_unnamed": {
+    "message": "Grupo sem nome",
+    "description": "Fallback label for a tab group with no title."
+  },
+
+  "treeside_search_placeholder": {
+    "message": "Buscar abas por título ou URL...",
+    "description": "Placeholder for the search input."
+  },
+  "treeside_search_aria": {
+    "message": "Filtrar abas por título ou URL",
+    "description": "Accessible label for the search input."
+  },
+  "treeside_search_clear_aria": {
+    "message": "Limpar busca",
+    "description": "Screen-reader label for the search clear button."
+  },
+
+  "treeside_empty_body": {
+    "message": "Ainda não há abas nesta janela.",
+    "description": "Empty-state body text."
+  },
+  "treeside_empty_hint": {
+    "message": "Abra uma aba para começar.",
+    "description": "Empty-state hint text."
+  },
+
+  "treeside_confirm_title": {
+    "message": "Fechar $1 abas?",
+    "description": "Confirm dialog title. $1 is the total count (parent + descendants).",
+    "placeholders": { "count": { "content": "$1" } }
+  },
+  "treeside_confirm_body": {
+    "message": "Isto fechará a aba pai e seu(s) $1 descendente(s). Isso não pode ser desfeito.",
+    "description": "Confirm dialog body. $1 is the total count.",
+    "placeholders": { "count": { "content": "$1" } }
+  },
+  "treeside_confirm_ok": {
+    "message": "Fechar tudo",
+    "description": "Confirm dialog confirm button."
+  },
+  "treeside_confirm_cancel": {
+    "message": "Cancelar",
+    "description": "Confirm dialog cancel button."
+  },
+
+  "treeside_options_nav_aria": {
+    "message": "Navegação de opções do TreeSide",
+    "description": "Accessible label for the options sidebar navigation."
+  },
+  "treeside_options_nav_general": {
+    "message": "Geral",
+    "description": "Sidebar nav label for the General section."
+  },
+  "treeside_options_nav_license": {
+    "message": "Licença Pro",
+    "description": "Sidebar nav label for the Pro License section."
+  },
+  "treeside_options_nav_data": {
+    "message": "Dados",
+    "description": "Sidebar nav label for the Data section."
+  },
+  "treeside_options_nav_about": {
+    "message": "Sobre",
+    "description": "Sidebar nav label for the About section."
+  },
+  "treeside_options_footer_built_by": {
+    "message": "Feito por zovo.one",
+    "description": "Footer link in the options page."
+  },
+
+  "treeside_options_title_general": {
+    "message": "Aparência",
+    "description": "Title for the General section."
+  },
+  "treeside_options_theme_label": {
+    "message": "Tema",
+    "description": "Options label for the theme segmented control."
+  },
+  "treeside_options_theme_system": {
+    "message": "Sistema",
+    "description": "Options theme choice: follow the OS setting."
+  },
+  "treeside_options_theme_light": {
+    "message": "Claro",
+    "description": "Options theme choice: force light."
+  },
+  "treeside_options_theme_dark": {
+    "message": "Escuro",
+    "description": "Options theme choice: force dark."
+  },
+  "treeside_options_theme_aria": {
+    "message": "Preferência de tema",
+    "description": "Accessible radiogroup label for the theme segmented control."
+  },
+  "treeside_options_accent_label": {
+    "message": "Cor de destaque",
+    "description": "Options label for the accent segmented control."
+  },
+  "treeside_options_accent_violet": {
+    "message": "Violeta",
+    "description": "Options accent choice: violet (free default)."
+  },
+  "treeside_options_accent_teal": {
+    "message": "Azul-petróleo",
+    "description": "Options accent choice: teal (Pro)."
+  },
+  "treeside_options_accent_amber": {
+    "message": "Âmbar",
+    "description": "Options accent choice: amber (Pro)."
+  },
+  "treeside_options_accent_aria": {
+    "message": "Preferência de cor de destaque",
+    "description": "Accessible radiogroup label for the accent segmented control."
+  },
+  "treeside_options_pro_hint": {
+    "message": "Recurso Pro.",
+    "description": "Inline hint on locked Pro affordances."
+  },
+  "treeside_options_pro_cta": {
+    "message": "Ver planos Pro",
+    "description": "CTA link text to the pricing page."
+  },
+  "treeside_options_row_height_label": {
+    "message": "Altura da linha",
+    "description": "Options label for the row height segmented control."
+  },
+  "treeside_options_row_height_comfortable": {
+    "message": "Confortável",
+    "description": "Options row-height choice: 32px (default)."
+  },
+  "treeside_options_row_height_compact": {
+    "message": "Compacta",
+    "description": "Options row-height choice: 28px."
+  },
+  "treeside_options_row_height_aria": {
+    "message": "Preferência de altura da linha",
+    "description": "Accessible radiogroup label for the row height segmented control."
+  },
+  "treeside_options_confirm_threshold_label": {
+    "message": "Confirmar antes de fechar ramos com este número de abas ou mais",
+    "description": "Options label for the confirm-threshold slider."
+  },
+
+  "treeside_options_title_license": {
+    "message": "Ativar ou remover uma chave Zovo Pro",
+    "description": "Title for the Pro License section."
+  },
+  "treeside_options_sub_license": {
+    "message": "Uma licença Pro desbloqueia instantâneos persistentes da árvore, modelos de árvore, temas personalizados e ferramentas avançadas de teclado. Um único pagamento ativa o Pro nesta extensão para sempre.",
+    "description": "Subtitle for the Pro License section."
+  },
+  "treeside_options_license_active_prefix": {
+    "message": "Pro ativo.",
+    "description": "Prefix shown when a Pro license is active."
+  },
+  "treeside_options_license_active_lifetime": {
+    "message": "Licença vitalícia.",
+    "description": "License status line for a lifetime license."
+  },
+  "treeside_options_license_deactivate": {
+    "message": "Desativar",
+    "description": "Button: deactivate the current license."
+  },
+  "treeside_options_license_deactivated": {
+    "message": "Licença desativada. De volta ao plano gratuito.",
+    "description": "Status message after the user deactivates a license."
+  },
+  "treeside_options_license_key_label": {
+    "message": "Chave de licença",
+    "description": "Accessible label for the license-key input."
+  },
+  "treeside_options_license_placeholder": {
+    "message": "ZOVO-XXXX-XXXX-XXXX-XXXX",
+    "description": "Placeholder text for the license-key input."
+  },
+  "treeside_options_license_activate": {
+    "message": "Ativar",
+    "description": "Button: activate the entered license key."
+  },
+  "treeside_options_license_verifying": {
+    "message": "Verificando...",
+    "description": "Button busy state while the license key is being verified."
+  },
+  "treeside_options_license_empty": {
+    "message": "Digite uma chave de licença primeiro.",
+    "description": "Error shown when activating with an empty input."
+  },
+  "treeside_options_license_activated": {
+    "message": "Licença ativada. Pro desbloqueado.",
+    "description": "Success message after activation."
+  },
+  "treeside_options_license_failed": {
+    "message": "Essa chave não pôde ser verificada. Confira a chave e tente novamente.",
+    "description": "Error shown when the license server rejects the key."
+  },
+  "treeside_options_license_error": {
+    "message": "Falha na verificação. Tente novamente em instantes.",
+    "description": "Error shown when the license verify endpoint is unreachable."
+  },
+  "treeside_options_license_buy": {
+    "message": "Ver planos Pro",
+    "description": "Link to the pricing page."
+  },
+  "treeside_options_license_refund": {
+    "message": "Garantia de reembolso de 14 dias. Se Pro não valer a pena, reembolsamos, sem perguntas.",
+    "description": "Refund promise under the Pro License section."
+  },
+
+  "treeside_options_title_data": {
+    "message": "Seus dados ficam neste dispositivo",
+    "description": "Title for the Data section."
+  },
+  "treeside_options_sub_data": {
+    "message": "Exporte ou exclua tudo o que o TreeSide armazenou neste dispositivo. Sem nuvem, sem sincronização.",
+    "description": "Subtitle for the Data section."
+  },
+  "treeside_options_data_export": {
+    "message": "Exportar meus dados",
+    "description": "Button: export stored preferences and overrides to a JSON file."
+  },
+  "treeside_options_data_delete": {
+    "message": "Excluir todos os dados",
+    "description": "Button: delete everything TreeSide has stored on this device."
+  },
+  "treeside_options_privacy_delete_confirm": {
+    "message": "Excluir todos os dados do TreeSide deste dispositivo? Isso não pode ser desfeito.",
+    "description": "window.confirm prompt before deleting all data."
+  },
+  "treeside_options_privacy_delete_ok": {
+    "message": "Todos os dados do TreeSide foram limpos deste dispositivo.",
+    "description": "Success message after deleting all data."
+  },
+  "treeside_options_privacy_delete_err": {
+    "message": "Falha ao excluir. Tente novamente.",
+    "description": "Error shown when the delete operation fails."
+  },
+
+  "treeside_options_title_about": {
+    "message": "Sobre o TreeSide",
+    "description": "Title for the About section."
+  },
+  "treeside_options_about_disclaimer": {
+    "message": "TreeSide é uma ferramenta independente da Zovo. Ele lê apenas os metadados de aba que o Chrome já mantém (título, URL, relação de opener, pertencimento ao grupo) para desenhar e manipular a árvore. Nunca lê conteúdo da página, nunca injeta scripts e nunca faz uma requisição de rede, exceto quando você informa explicitamente uma chave de licença.",
+    "description": "Independence and privacy disclaimer in the About section."
+  },
+
+  "treeside_onb_eyebrow": {
+    "message": "TreeSide",
+    "description": "Brand eyebrow shown at the top of every onboarding page."
+  },
+  "treeside_onb_page1_heading": {
+    "message": "Suas abas, em árvore",
+    "description": "Onboarding page 1 main heading."
+  },
+  "treeside_onb_page1_sub": {
+    "message": "TreeSide mostra as abas da sua janela atual como uma árvore recolhível pai-filho, construída a partir do opener de cada aba. Sem scripts de conteúdo, sem permissões de host, sem leituras de página."
+  },
+  "treeside_onb_page2_heading": {
+    "message": "Arraste para repaiantar",
+    "description": "Onboarding page 2 main heading."
+  },
+  "treeside_onb_page2_sub": {
+    "message": "Arraste qualquer aba sobre outra para torná-la sua filha. Seus repaientamentos persistem entre sessões, então a hierarquia que você constrói fica intacta."
+  },
+  "treeside_onb_page3_heading": {
+    "message": "Buscar e recolher",
+    "description": "Onboarding page 3 main heading."
+  },
+  "treeside_onb_page3_sub": {
+    "message": "Busca difusa por subsequência sobre título ou URL. Recolha ramos que você não precisa agora; eles permanecem recolhidos quando você volta."
+  },
+  "treeside_onb_page4_heading": {
+    "message": "Feche ramos com segurança",
+    "description": "Onboarding page 4 main heading."
+  },
+  "treeside_onb_page4_sub": {
+    "message": "Um clique fecha uma aba e todos os seus descendentes. Ramos com cinco ou mais abas pedem confirmação primeiro."
+  },
+  "treeside_onb_page5_heading": {
+    "message": "Pro: instantâneos, modelos, temas",
+    "description": "Onboarding page 5 main heading."
+  },
+  "treeside_onb_page5_sub": {
+    "message": "O plano gratuito oferece tudo o que está acima, para sempre. Pro adiciona instantâneos de recuperação após queda, modelos de árvore, temas personalizados e ferramentas avançadas de teclado. Um único pagamento; ativo para sempre."
+  },
+  "treeside_onb_skip": {
+    "message": "Pular configuração",
+    "description": "Skip link in the onboarding footer."
+  },
+  "treeside_onb_back": {
+    "message": "Voltar",
+    "description": "Back button in the onboarding footer."
+  },
+  "treeside_onb_next": {
+    "message": "Avançar",
+    "description": "Next button in the onboarding footer."
+  },
+  "treeside_onb_done": {
+    "message": "Concluir",
+    "description": "Done button in the onboarding footer (final page)."
+  },
+  "treeside_onb_step_aria": {
+    "message": "Etapas de onboarding",
+    "description": "Accessible label for the onboarding step indicator."
+  },
+  "treeside_onb_step_position_aria": {
+    "message": "Etapa $1",
+    "description": "Accessible label for an individual step dot. $1 is the 1-based page index.",
+    "placeholders": { "page": { "content": "$1" } }
+  },
+  "treeside_onb_page_of": {
+    "message": "$1 de $2",
+    "description": "Page indicator text in the onboarding footer. $1 is current page, $2 is total pages.",
+    "placeholders": {
+      "current": { "content": "$1" },
+      "total": { "content": "$2" }
+    }
+  }
+}

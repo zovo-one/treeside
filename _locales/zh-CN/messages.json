@@ -1,0 +1,397 @@
+{
+  "extName": {
+    "message": "TreeSide - Chrome 侧边栏中的垂直标签页",
+    "description": "Extension name shown in chrome://extensions and the Chrome Web Store listing title."
+  },
+  "extDesc": {
+    "message": "Chrome 侧边栏中的树状标签页。拖拽改换父级、折叠分支、模糊搜索。设计即隐私。",
+    "description": "Extension description shown in chrome://extensions and the Chrome Web Store listing short summary (<=132 chars)."
+  },
+  "actionTitle": {
+    "message": "TreeSide - 打开标签页树",
+    "description": "Tooltip for the toolbar action icon."
+  },
+  "permTabsJustification": {
+    "message": "读取标签页元数据(标题、URL、打开者、组)以构建和更新树。支撑点击聚焦、中键关闭以及关闭分支。不读取页面 DOM。",
+    "description": "CWS reviewer justification for the tabs permission."
+  },
+  "permTabGroupsJustification": {
+    "message": "读取并编辑 Chrome 原生标签页组(颜色、名称、成员),以便树显示组标题,并在改换父级操作中保留组身份。",
+    "description": "CWS reviewer justification for the tabGroups permission."
+  },
+  "permSidePanelJustification": {
+    "message": "打开侧边栏表面。整个产品界面都位于 Chrome 原生侧边栏中。",
+    "description": "CWS reviewer justification for the sidePanel permission."
+  },
+  "permStorageJustification": {
+    "message": "将用户偏好设置、手动改换父级和折叠状态持久化到 storage.local。无页面内容。无同步。",
+    "description": "CWS reviewer justification for the storage permission."
+  },
+
+  "treeside_loading": {
+    "message": "正在加载标签页树...",
+    "description": "Side panel loading state before bootstrap completes."
+  },
+  "treeside_panel_aria_label": {
+    "message": "TreeSide 标签页树",
+    "description": "Accessible label for the tree root."
+  },
+  "treeside_untitled_tab": {
+    "message": "无标题标签页",
+    "description": "Fallback label for a tab with no title and no URL."
+  },
+  "treeside_audible_aria": {
+    "message": "此标签页正在播放音频。",
+    "description": "Screen-reader label for the speaker icon on an audible tab."
+  },
+  "treeside_expand_aria": {
+    "message": "展开标签页 $1 的分支",
+    "description": "Screen-reader label for the expand chevron. $1 is the tab id.",
+    "placeholders": { "tabId": { "content": "$1" } }
+  },
+  "treeside_collapse_aria": {
+    "message": "折叠标签页 $1 的分支",
+    "description": "Screen-reader label for the collapse chevron. $1 is the tab id.",
+    "placeholders": { "tabId": { "content": "$1" } }
+  },
+  "treeside_close_tab_aria": {
+    "message": "关闭此标签页",
+    "description": "Screen-reader label for the close-tab hover action."
+  },
+  "treeside_close_tab_title": {
+    "message": "关闭标签页",
+    "description": "Title attribute for the close-tab hover action."
+  },
+  "treeside_close_branch_aria": {
+    "message": "关闭此标签页及其 $1 个后代",
+    "description": "Screen-reader label for the close-branch hover action. $1 is the descendant count.",
+    "placeholders": { "count": { "content": "$1" } }
+  },
+  "treeside_close_branch_title": {
+    "message": "关闭分支",
+    "description": "Title attribute for the close-branch hover action."
+  },
+  "treeside_group_toggle_aria": {
+    "message": "切换组",
+    "description": "Screen-reader label for the group collapse toggle."
+  },
+  "treeside_group_unnamed": {
+    "message": "未命名组",
+    "description": "Fallback label for a tab group with no title."
+  },
+
+  "treeside_search_placeholder": {
+    "message": "按标题或 URL 搜索标签页...",
+    "description": "Placeholder for the search input."
+  },
+  "treeside_search_aria": {
+    "message": "按标题或 URL 筛选标签页",
+    "description": "Accessible label for the search input."
+  },
+  "treeside_search_clear_aria": {
+    "message": "清除搜索",
+    "description": "Screen-reader label for the search clear button."
+  },
+
+  "treeside_empty_body": {
+    "message": "此窗口中尚无标签页。",
+    "description": "Empty-state body text."
+  },
+  "treeside_empty_hint": {
+    "message": "打开一个标签页即可开始。",
+    "description": "Empty-state hint text."
+  },
+
+  "treeside_confirm_title": {
+    "message": "关闭 $1 个标签页?",
+    "description": "Confirm dialog title. $1 is the total count (parent + descendants).",
+    "placeholders": { "count": { "content": "$1" } }
+  },
+  "treeside_confirm_body": {
+    "message": "这将关闭父标签页及其 $1 个后代。此操作无法撤销。",
+    "description": "Confirm dialog body. $1 is the total count.",
+    "placeholders": { "count": { "content": "$1" } }
+  },
+  "treeside_confirm_ok": {
+    "message": "全部关闭",
+    "description": "Confirm dialog confirm button."
+  },
+  "treeside_confirm_cancel": {
+    "message": "取消",
+    "description": "Confirm dialog cancel button."
+  },
+
+  "treeside_options_nav_aria": {
+    "message": "TreeSide 选项导航",
+    "description": "Accessible label for the options sidebar navigation."
+  },
+  "treeside_options_nav_general": {
+    "message": "通用",
+    "description": "Sidebar nav label for the General section."
+  },
+  "treeside_options_nav_license": {
+    "message": "Pro 许可证",
+    "description": "Sidebar nav label for the Pro License section."
+  },
+  "treeside_options_nav_data": {
+    "message": "数据",
+    "description": "Sidebar nav label for the Data section."
+  },
+  "treeside_options_nav_about": {
+    "message": "关于",
+    "description": "Sidebar nav label for the About section."
+  },
+  "treeside_options_footer_built_by": {
+    "message": "由 zovo.one 构建",
+    "description": "Footer link in the options page."
+  },
+
+  "treeside_options_title_general": {
+    "message": "外观",
+    "description": "Title for the General section."
+  },
+  "treeside_options_theme_label": {
+    "message": "主题",
+    "description": "Options label for the theme segmented control."
+  },
+  "treeside_options_theme_system": {
+    "message": "跟随系统",
+    "description": "Options theme choice: follow the OS setting."
+  },
+  "treeside_options_theme_light": {
+    "message": "浅色",
+    "description": "Options theme choice: force light."
+  },
+  "treeside_options_theme_dark": {
+    "message": "深色",
+    "description": "Options theme choice: force dark."
+  },
+  "treeside_options_theme_aria": {
+    "message": "主题偏好",
+    "description": "Accessible radiogroup label for the theme segmented control."
+  },
+  "treeside_options_accent_label": {
+    "message": "强调色",
+    "description": "Options label for the accent segmented control."
+  },
+  "treeside_options_accent_violet": {
+    "message": "紫色",
+    "description": "Options accent choice: violet (free default)."
+  },
+  "treeside_options_accent_teal": {
+    "message": "青色",
+    "description": "Options accent choice: teal (Pro)."
+  },
+  "treeside_options_accent_amber": {
+    "message": "琥珀色",
+    "description": "Options accent choice: amber (Pro)."
+  },
+  "treeside_options_accent_aria": {
+    "message": "强调色偏好",
+    "description": "Accessible radiogroup label for the accent segmented control."
+  },
+  "treeside_options_pro_hint": {
+    "message": "Pro 功能。",
+    "description": "Inline hint on locked Pro affordances."
+  },
+  "treeside_options_pro_cta": {
+    "message": "查看 Pro 方案",
+    "description": "CTA link text to the pricing page."
+  },
+  "treeside_options_row_height_label": {
+    "message": "行高",
+    "description": "Options label for the row height segmented control."
+  },
+  "treeside_options_row_height_comfortable": {
+    "message": "舒适",
+    "description": "Options row-height choice: 32px (default)."
+  },
+  "treeside_options_row_height_compact": {
+    "message": "紧凑",
+    "description": "Options row-height choice: 28px."
+  },
+  "treeside_options_row_height_aria": {
+    "message": "行高偏好",
+    "description": "Accessible radiogroup label for the row height segmented control."
+  },
+  "treeside_options_confirm_threshold_label": {
+    "message": "在关闭包含此数量或更多标签页的分支之前先确认",
+    "description": "Options label for the confirm-threshold slider."
+  },
+
+  "treeside_options_title_license": {
+    "message": "激活或移除 Zovo Pro 密钥",
+    "description": "Title for the Pro License section."
+  },
+  "treeside_options_sub_license": {
+    "message": "Pro 许可证可解锁持久化树快照、树模板、自定义主题以及键盘高级工具。一次付款即可永久激活此扩展中的 Pro。",
+    "description": "Subtitle for the Pro License section."
+  },
+  "treeside_options_license_active_prefix": {
+    "message": "Pro 已激活。",
+    "description": "Prefix shown when a Pro license is active."
+  },
+  "treeside_options_license_active_lifetime": {
+    "message": "终身许可证。",
+    "description": "License status line for a lifetime license."
+  },
+  "treeside_options_license_deactivate": {
+    "message": "停用",
+    "description": "Button: deactivate the current license."
+  },
+  "treeside_options_license_deactivated": {
+    "message": "许可证已停用。回到免费档。",
+    "description": "Status message after the user deactivates a license."
+  },
+  "treeside_options_license_key_label": {
+    "message": "许可证密钥",
+    "description": "Accessible label for the license-key input."
+  },
+  "treeside_options_license_placeholder": {
+    "message": "ZOVO-XXXX-XXXX-XXXX-XXXX",
+    "description": "Placeholder text for the license-key input."
+  },
+  "treeside_options_license_activate": {
+    "message": "激活",
+    "description": "Button: activate the entered license key."
+  },
+  "treeside_options_license_verifying": {
+    "message": "验证中...",
+    "description": "Button busy state while the license key is being verified."
+  },
+  "treeside_options_license_empty": {
+    "message": "请先输入许可证密钥。",
+    "description": "Error shown when activating with an empty input."
+  },
+  "treeside_options_license_activated": {
+    "message": "许可证已激活。Pro 已解锁。",
+    "description": "Success message after activation."
+  },
+  "treeside_options_license_failed": {
+    "message": "该密钥未通过验证。请检查密钥并重试。",
+    "description": "Error shown when the license server rejects the key."
+  },
+  "treeside_options_license_error": {
+    "message": "验证失败。请稍后重试。",
+    "description": "Error shown when the license verify endpoint is unreachable."
+  },
+  "treeside_options_license_buy": {
+    "message": "查看 Pro 方案",
+    "description": "Link to the pricing page."
+  },
+  "treeside_options_license_refund": {
+    "message": "14 天退款保证。如果 Pro 不值得,我们无条件退款。",
+    "description": "Refund promise under the Pro License section."
+  },
+
+  "treeside_options_title_data": {
+    "message": "您的数据保留在此设备上",
+    "description": "Title for the Data section."
+  },
+  "treeside_options_sub_data": {
+    "message": "导出或删除 TreeSide 存储在此设备上的所有数据。无云存储,无同步。",
+    "description": "Subtitle for the Data section."
+  },
+  "treeside_options_data_export": {
+    "message": "导出我的数据",
+    "description": "Button: export stored preferences and overrides to a JSON file."
+  },
+  "treeside_options_data_delete": {
+    "message": "删除所有数据",
+    "description": "Button: delete everything TreeSide has stored on this device."
+  },
+  "treeside_options_privacy_delete_confirm": {
+    "message": "从此设备删除所有 TreeSide 数据?此操作无法撤销。",
+    "description": "window.confirm prompt before deleting all data."
+  },
+  "treeside_options_privacy_delete_ok": {
+    "message": "已从此设备清除所有 TreeSide 数据。",
+    "description": "Success message after deleting all data."
+  },
+  "treeside_options_privacy_delete_err": {
+    "message": "删除失败。请重试。",
+    "description": "Error shown when the delete operation fails."
+  },
+
+  "treeside_options_title_about": {
+    "message": "关于 TreeSide",
+    "description": "Title for the About section."
+  },
+  "treeside_options_about_disclaimer": {
+    "message": "TreeSide 是来自 Zovo 的独立工具。它仅读取 Chrome 已维护的标签页元数据(标题、URL、打开者关系、组成员身份)来绘制和操作树。它从不读取页面内容,从不注入脚本,也从不发起网络请求,除非您明确输入许可证密钥。",
+    "description": "Independence and privacy disclaimer in the About section."
+  },
+
+  "treeside_onb_eyebrow": {
+    "message": "TreeSide",
+    "description": "Brand eyebrow shown at the top of every onboarding page."
+  },
+  "treeside_onb_page1_heading": {
+    "message": "您的标签页,以树呈现",
+    "description": "Onboarding page 1 main heading."
+  },
+  "treeside_onb_page1_sub": {
+    "message": "TreeSide 将当前窗口的标签页显示为可折叠的父子树,基于每个标签页的打开者构建。无内容脚本,无主机权限,无页面读取。"
+  },
+  "treeside_onb_page2_heading": {
+    "message": "拖拽即可改换父级",
+    "description": "Onboarding page 2 main heading."
+  },
+  "treeside_onb_page2_sub": {
+    "message": "将任意标签页拖到另一个标签页上即可将其设为子级。您的改换父级操作会跨会话保留,因此您构建的层级会保持不变。"
+  },
+  "treeside_onb_page3_heading": {
+    "message": "搜索与折叠",
+    "description": "Onboarding page 3 main heading."
+  },
+  "treeside_onb_page3_sub": {
+    "message": "按标题或 URL 进行子序列模糊搜索。折叠您暂时不需要的分支;它们会在您回来时保持折叠状态。"
+  },
+  "treeside_onb_page4_heading": {
+    "message": "安全地关闭分支",
+    "description": "Onboarding page 4 main heading."
+  },
+  "treeside_onb_page4_sub": {
+    "message": "一次点击即可关闭一个标签页及其所有后代。包含五个或更多标签页的分支会先要求确认。"
+  },
+  "treeside_onb_page5_heading": {
+    "message": "Pro:快照、模板、主题",
+    "description": "Onboarding page 5 main heading."
+  },
+  "treeside_onb_page5_sub": {
+    "message": "免费档永远包含上述全部功能。Pro 增加崩溃恢复快照、树模板、自定义主题以及键盘高级工具。一次付款;永久激活。"
+  },
+  "treeside_onb_skip": {
+    "message": "跳过设置",
+    "description": "Skip link in the onboarding footer."
+  },
+  "treeside_onb_back": {
+    "message": "返回",
+    "description": "Back button in the onboarding footer."
+  },
+  "treeside_onb_next": {
+    "message": "下一步",
+    "description": "Next button in the onboarding footer."
+  },
+  "treeside_onb_done": {
+    "message": "完成",
+    "description": "Done button in the onboarding footer (final page)."
+  },
+  "treeside_onb_step_aria": {
+    "message": "新手引导步骤",
+    "description": "Accessible label for the onboarding step indicator."
+  },
+  "treeside_onb_step_position_aria": {
+    "message": "第 $1 步",
+    "description": "Accessible label for an individual step dot. $1 is the 1-based page index.",
+    "placeholders": { "page": { "content": "$1" } }
+  },
+  "treeside_onb_page_of": {
+    "message": "第 $1 页,共 $2 页",
+    "description": "Page indicator text in the onboarding footer. $1 is current page, $2 is total pages.",
+    "placeholders": {
+      "current": { "content": "$1" },
+      "total": { "content": "$2" }
+    }
+  }
+}

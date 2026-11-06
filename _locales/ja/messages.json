@@ -1,0 +1,397 @@
+{
+  "extName": {
+    "message": "TreeSide - Chromeのサイドパネルでタブをツリー表示",
+    "description": "Extension name shown in chrome://extensions and the Chrome Web Store listing title."
+  },
+  "extDesc": {
+    "message": "Chromeのサイドパネルでツリー状のタブ。ドラッグで親変更、ブランチ折りたたみ、あいまい検索。プライバシー重視の設計。",
+    "description": "Extension description shown in chrome://extensions and the Chrome Web Store listing short summary (<=132 chars)."
+  },
+  "actionTitle": {
+    "message": "TreeSide - タブツリーを開く",
+    "description": "Tooltip for the toolbar action icon."
+  },
+  "permTabsJustification": {
+    "message": "ツリーの構築と更新のため、タブのメタデータ（タイトル、URL、opener、グループ）を読み取ります。クリックでフォーカス、中クリックで閉じる、ブランチを閉じるを支えます。ページDOMの読み取りはありません。",
+    "description": "CWS reviewer justification for the tabs permission."
+  },
+  "permTabGroupsJustification": {
+    "message": "Chromeネイティブのタブグループ（色、名前、メンバーシップ）を読み取り・編集し、ツリーにグループヘッダーを表示し、親変更操作でグループIDを保持します。",
+    "description": "CWS reviewer justification for the tabGroups permission."
+  },
+  "permSidePanelJustification": {
+    "message": "サイドパネル面を開きます。製品UIの全体がChromeネイティブのサイドパネルに存在します。",
+    "description": "CWS reviewer justification for the sidePanel permission."
+  },
+  "permStorageJustification": {
+    "message": "ユーザー設定、手動の親変更、折りたたみ状態をstorage.localに保存します。ページコンテンツなし。同期なし。",
+    "description": "CWS reviewer justification for the storage permission."
+  },
+
+  "treeside_loading": {
+    "message": "タブツリーを読み込み中...",
+    "description": "Side panel loading state before bootstrap completes."
+  },
+  "treeside_panel_aria_label": {
+    "message": "TreeSide タブツリー",
+    "description": "Accessible label for the tree root."
+  },
+  "treeside_untitled_tab": {
+    "message": "無題のタブ",
+    "description": "Fallback label for a tab with no title and no URL."
+  },
+  "treeside_audible_aria": {
+    "message": "このタブは音声を再生しています。",
+    "description": "Screen-reader label for the speaker icon on an audible tab."
+  },
+  "treeside_expand_aria": {
+    "message": "タブ $1 のブランチを展開",
+    "description": "Screen-reader label for the expand chevron. $1 is the tab id.",
+    "placeholders": { "tabId": { "content": "$1" } }
+  },
+  "treeside_collapse_aria": {
+    "message": "タブ $1 のブランチを折りたたむ",
+    "description": "Screen-reader label for the collapse chevron. $1 is the tab id.",
+    "placeholders": { "tabId": { "content": "$1" } }
+  },
+  "treeside_close_tab_aria": {
+    "message": "このタブを閉じる",
+    "description": "Screen-reader label for the close-tab hover action."
+  },
+  "treeside_close_tab_title": {
+    "message": "タブを閉じる",
+    "description": "Title attribute for the close-tab hover action."
+  },
+  "treeside_close_branch_aria": {
+    "message": "このタブと $1 個の子孫を閉じる",
+    "description": "Screen-reader label for the close-branch hover action. $1 is the descendant count.",
+    "placeholders": { "count": { "content": "$1" } }
+  },
+  "treeside_close_branch_title": {
+    "message": "ブランチを閉じる",
+    "description": "Title attribute for the close-branch hover action."
+  },
+  "treeside_group_toggle_aria": {
+    "message": "グループを切り替え",
+    "description": "Screen-reader label for the group collapse toggle."
+  },
+  "treeside_group_unnamed": {
+    "message": "名前なしのグループ",
+    "description": "Fallback label for a tab group with no title."
+  },
+
+  "treeside_search_placeholder": {
+    "message": "タイトルまたはURLでタブを検索...",
+    "description": "Placeholder for the search input."
+  },
+  "treeside_search_aria": {
+    "message": "タイトルまたはURLでタブを絞り込み",
+    "description": "Accessible label for the search input."
+  },
+  "treeside_search_clear_aria": {
+    "message": "検索をクリア",
+    "description": "Screen-reader label for the search clear button."
+  },
+
+  "treeside_empty_body": {
+    "message": "このウィンドウにはまだタブがありません。",
+    "description": "Empty-state body text."
+  },
+  "treeside_empty_hint": {
+    "message": "タブを開いて開始してください。",
+    "description": "Empty-state hint text."
+  },
+
+  "treeside_confirm_title": {
+    "message": "$1 個のタブを閉じますか？",
+    "description": "Confirm dialog title. $1 is the total count (parent + descendants).",
+    "placeholders": { "count": { "content": "$1" } }
+  },
+  "treeside_confirm_body": {
+    "message": "親タブとその $1 個の子孫を閉じます。これは元に戻せません。",
+    "description": "Confirm dialog body. $1 is the total count.",
+    "placeholders": { "count": { "content": "$1" } }
+  },
+  "treeside_confirm_ok": {
+    "message": "すべて閉じる",
+    "description": "Confirm dialog confirm button."
+  },
+  "treeside_confirm_cancel": {
+    "message": "キャンセル",
+    "description": "Confirm dialog cancel button."
+  },
+
+  "treeside_options_nav_aria": {
+    "message": "TreeSide オプション ナビゲーション",
+    "description": "Accessible label for the options sidebar navigation."
+  },
+  "treeside_options_nav_general": {
+    "message": "一般",
+    "description": "Sidebar nav label for the General section."
+  },
+  "treeside_options_nav_license": {
+    "message": "Pro ライセンス",
+    "description": "Sidebar nav label for the Pro License section."
+  },
+  "treeside_options_nav_data": {
+    "message": "データ",
+    "description": "Sidebar nav label for the Data section."
+  },
+  "treeside_options_nav_about": {
+    "message": "概要",
+    "description": "Sidebar nav label for the About section."
+  },
+  "treeside_options_footer_built_by": {
+    "message": "zovo.one により構築",
+    "description": "Footer link in the options page."
+  },
+
+  "treeside_options_title_general": {
+    "message": "外観",
+    "description": "Title for the General section."
+  },
+  "treeside_options_theme_label": {
+    "message": "テーマ",
+    "description": "Options label for the theme segmented control."
+  },
+  "treeside_options_theme_system": {
+    "message": "システム",
+    "description": "Options theme choice: follow the OS setting."
+  },
+  "treeside_options_theme_light": {
+    "message": "ライト",
+    "description": "Options theme choice: force light."
+  },
+  "treeside_options_theme_dark": {
+    "message": "ダーク",
+    "description": "Options theme choice: force dark."
+  },
+  "treeside_options_theme_aria": {
+    "message": "テーマ設定",
+    "description": "Accessible radiogroup label for the theme segmented control."
+  },
+  "treeside_options_accent_label": {
+    "message": "アクセントカラー",
+    "description": "Options label for the accent segmented control."
+  },
+  "treeside_options_accent_violet": {
+    "message": "バイオレット",
+    "description": "Options accent choice: violet (free default)."
+  },
+  "treeside_options_accent_teal": {
+    "message": "ティール",
+    "description": "Options accent choice: teal (Pro)."
+  },
+  "treeside_options_accent_amber": {
+    "message": "アンバー",
+    "description": "Options accent choice: amber (Pro)."
+  },
+  "treeside_options_accent_aria": {
+    "message": "アクセントカラー設定",
+    "description": "Accessible radiogroup label for the accent segmented control."
+  },
+  "treeside_options_pro_hint": {
+    "message": "Pro の機能です。",
+    "description": "Inline hint on locked Pro affordances."
+  },
+  "treeside_options_pro_cta": {
+    "message": "Pro プランを見る",
+    "description": "CTA link text to the pricing page."
+  },
+  "treeside_options_row_height_label": {
+    "message": "行の高さ",
+    "description": "Options label for the row height segmented control."
+  },
+  "treeside_options_row_height_comfortable": {
+    "message": "ゆったり",
+    "description": "Options row-height choice: 32px (default)."
+  },
+  "treeside_options_row_height_compact": {
+    "message": "コンパクト",
+    "description": "Options row-height choice: 28px."
+  },
+  "treeside_options_row_height_aria": {
+    "message": "行の高さの設定",
+    "description": "Accessible radiogroup label for the row height segmented control."
+  },
+  "treeside_options_confirm_threshold_label": {
+    "message": "この数以上のタブを持つブランチを閉じる前に確認する",
+    "description": "Options label for the confirm-threshold slider."
+  },
+
+  "treeside_options_title_license": {
+    "message": "Zovo Pro キーを有効化または削除",
+    "description": "Title for the Pro License section."
+  },
+  "treeside_options_sub_license": {
+    "message": "Pro ライセンスは永続的なツリースナップショット、ツリーテンプレート、カスタムテーマ、キーボードのパワーツールを解除します。一度の支払いで、この拡張機能の Pro が永久に有効になります。",
+    "description": "Subtitle for the Pro License section."
+  },
+  "treeside_options_license_active_prefix": {
+    "message": "Pro は有効です。",
+    "description": "Prefix shown when a Pro license is active."
+  },
+  "treeside_options_license_active_lifetime": {
+    "message": "永久ライセンス。",
+    "description": "License status line for a lifetime license."
+  },
+  "treeside_options_license_deactivate": {
+    "message": "無効化",
+    "description": "Button: deactivate the current license."
+  },
+  "treeside_options_license_deactivated": {
+    "message": "ライセンスを無効化しました。無料プランに戻ります。",
+    "description": "Status message after the user deactivates a license."
+  },
+  "treeside_options_license_key_label": {
+    "message": "ライセンスキー",
+    "description": "Accessible label for the license-key input."
+  },
+  "treeside_options_license_placeholder": {
+    "message": "ZOVO-XXXX-XXXX-XXXX-XXXX",
+    "description": "Placeholder text for the license-key input."
+  },
+  "treeside_options_license_activate": {
+    "message": "有効化",
+    "description": "Button: activate the entered license key."
+  },
+  "treeside_options_license_verifying": {
+    "message": "検証中...",
+    "description": "Button busy state while the license key is being verified."
+  },
+  "treeside_options_license_empty": {
+    "message": "先にライセンスキーを入力してください。",
+    "description": "Error shown when activating with an empty input."
+  },
+  "treeside_options_license_activated": {
+    "message": "ライセンスが有効になりました。Pro が解除されました。",
+    "description": "Success message after activation."
+  },
+  "treeside_options_license_failed": {
+    "message": "このキーは検証されませんでした。キーを確認して再試行してください。",
+    "description": "Error shown when the license server rejects the key."
+  },
+  "treeside_options_license_error": {
+    "message": "検証に失敗しました。しばらくしてから再試行してください。",
+    "description": "Error shown when the license verify endpoint is unreachable."
+  },
+  "treeside_options_license_buy": {
+    "message": "Pro プランを見る",
+    "description": "Link to the pricing page."
+  },
+  "treeside_options_license_refund": {
+    "message": "14日間の返金保証。Pro の価値がない場合は、質問なしで返金します。",
+    "description": "Refund promise under the Pro License section."
+  },
+
+  "treeside_options_title_data": {
+    "message": "データはこのデバイスに留まります",
+    "description": "Title for the Data section."
+  },
+  "treeside_options_sub_data": {
+    "message": "TreeSide がこのデバイスに保存したすべてのデータをエクスポートまたは削除します。クラウドなし、同期なし。",
+    "description": "Subtitle for the Data section."
+  },
+  "treeside_options_data_export": {
+    "message": "データをエクスポート",
+    "description": "Button: export stored preferences and overrides to a JSON file."
+  },
+  "treeside_options_data_delete": {
+    "message": "すべてのデータを削除",
+    "description": "Button: delete everything TreeSide has stored on this device."
+  },
+  "treeside_options_privacy_delete_confirm": {
+    "message": "このデバイスからすべてのTreeSideデータを削除しますか？これは元に戻せません。",
+    "description": "window.confirm prompt before deleting all data."
+  },
+  "treeside_options_privacy_delete_ok": {
+    "message": "このデバイスからすべてのTreeSideデータを消去しました。",
+    "description": "Success message after deleting all data."
+  },
+  "treeside_options_privacy_delete_err": {
+    "message": "削除に失敗しました。再試行してください。",
+    "description": "Error shown when the delete operation fails."
+  },
+
+  "treeside_options_title_about": {
+    "message": "TreeSide について",
+    "description": "Title for the About section."
+  },
+  "treeside_options_about_disclaimer": {
+    "message": "TreeSide は Zovo の独立したツールです。Chrome が既に保持しているタブメタデータ（タイトル、URL、opener の関係、グループの所属）のみを読み取り、ツリーを描画・操作します。ページコンテンツを読み取ること、スクリプトを注入すること、ネットワークリクエストを行うことは、ユーザーが明示的にライセンスキーを入力する場合を除き一切ありません。",
+    "description": "Independence and privacy disclaimer in the About section."
+  },
+
+  "treeside_onb_eyebrow": {
+    "message": "TreeSide",
+    "description": "Brand eyebrow shown at the top of every onboarding page."
+  },
+  "treeside_onb_page1_heading": {
+    "message": "タブをツリーで表示",
+    "description": "Onboarding page 1 main heading."
+  },
+  "treeside_onb_page1_sub": {
+    "message": "TreeSide は現在のウィンドウのタブを、各タブのopenerに基づく折りたたみ可能な親子ツリーとして表示します。コンテンツスクリプトなし、ホスト権限なし、ページ読み取りなし。"
+  },
+  "treeside_onb_page2_heading": {
+    "message": "ドラッグで親変更",
+    "description": "Onboarding page 2 main heading."
+  },
+  "treeside_onb_page2_sub": {
+    "message": "任意のタブを別のタブにドラッグして子にします。親変更はセッションをまたいで保存されるため、構築した階層はそのまま維持されます。"
+  },
+  "treeside_onb_page3_heading": {
+    "message": "検索と折りたたみ",
+    "description": "Onboarding page 3 main heading."
+  },
+  "treeside_onb_page3_sub": {
+    "message": "タイトルまたはURLによる部分一致のあいまい検索。今不要なブランチは折りたたんでおくと、戻ったときにも折りたたまれたままです。"
+  },
+  "treeside_onb_page4_heading": {
+    "message": "ブランチを安全に閉じる",
+    "description": "Onboarding page 4 main heading."
+  },
+  "treeside_onb_page4_sub": {
+    "message": "1回のクリックで、タブとそのすべての子孫を閉じます。5個以上のタブがあるブランチは、まず確認を求めます。"
+  },
+  "treeside_onb_page5_heading": {
+    "message": "Pro：スナップショット、テンプレート、テーマ",
+    "description": "Onboarding page 5 main heading."
+  },
+  "treeside_onb_page5_sub": {
+    "message": "無料プランは上記すべてを永久に提供します。Pro はクラッシュリカバリのスナップショット、ツリーテンプレート、カスタムテーマ、キーボードのパワーツールを追加します。一度の支払い、永久に有効。"
+  },
+  "treeside_onb_skip": {
+    "message": "セットアップをスキップ",
+    "description": "Skip link in the onboarding footer."
+  },
+  "treeside_onb_back": {
+    "message": "戻る",
+    "description": "Back button in the onboarding footer."
+  },
+  "treeside_onb_next": {
+    "message": "次へ",
+    "description": "Next button in the onboarding footer."
+  },
+  "treeside_onb_done": {
+    "message": "完了",
+    "description": "Done button in the onboarding footer (final page)."
+  },
+  "treeside_onb_step_aria": {
+    "message": "オンボーディングのステップ",
+    "description": "Accessible label for the onboarding step indicator."
+  },
+  "treeside_onb_step_position_aria": {
+    "message": "ステップ $1",
+    "description": "Accessible label for an individual step dot. $1 is the 1-based page index.",
+    "placeholders": { "page": { "content": "$1" } }
+  },
+  "treeside_onb_page_of": {
+    "message": "$1 / $2",
+    "description": "Page indicator text in the onboarding footer. $1 is current page, $2 is total pages.",
+    "placeholders": {
+      "current": { "content": "$1" },
+      "total": { "content": "$2" }
+    }
+  }
+}

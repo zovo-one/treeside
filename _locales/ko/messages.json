@@ -1,0 +1,397 @@
+{
+  "extName": {
+    "message": "TreeSide - Chrome 사이드 패널의 세로 탭",
+    "description": "Extension name shown in chrome://extensions and the Chrome Web Store listing title."
+  },
+  "extDesc": {
+    "message": "Chrome 사이드 패널의 트리형 탭. 드래그 부모 변경, 브랜치 접기, 퍼지 검색. 설계부터 프라이버시 중심.",
+    "description": "Extension description shown in chrome://extensions and the Chrome Web Store listing short summary (<=132 chars)."
+  },
+  "actionTitle": {
+    "message": "TreeSide - 탭 트리 열기",
+    "description": "Tooltip for the toolbar action icon."
+  },
+  "permTabsJustification": {
+    "message": "트리를 구성하고 갱신하기 위해 탭 메타데이터(제목, URL, opener, 그룹)를 읽습니다. 클릭해서 포커스, 가운데 클릭으로 닫기, 브랜치 닫기를 지원합니다. 페이지 DOM 읽기는 없습니다.",
+    "description": "CWS reviewer justification for the tabs permission."
+  },
+  "permTabGroupsJustification": {
+    "message": "Chrome의 네이티브 탭 그룹(색상, 이름, 멤버십)을 읽고 편집하여 트리가 그룹 헤더를 표시하고 부모 변경 작업에서 그룹 정체성을 보존합니다.",
+    "description": "CWS reviewer justification for the tabGroups permission."
+  },
+  "permSidePanelJustification": {
+    "message": "사이드 패널 표면을 엽니다. 제품 UI 전체가 Chrome의 네이티브 사이드 패널에 존재합니다.",
+    "description": "CWS reviewer justification for the sidePanel permission."
+  },
+  "permStorageJustification": {
+    "message": "사용자 기본 설정, 수동 부모 변경, 접기 상태를 storage.local에 저장합니다. 페이지 콘텐츠 없음. 동기화 없음.",
+    "description": "CWS reviewer justification for the storage permission."
+  },
+
+  "treeside_loading": {
+    "message": "탭 트리를 불러오는 중...",
+    "description": "Side panel loading state before bootstrap completes."
+  },
+  "treeside_panel_aria_label": {
+    "message": "TreeSide 탭 트리",
+    "description": "Accessible label for the tree root."
+  },
+  "treeside_untitled_tab": {
+    "message": "제목 없는 탭",
+    "description": "Fallback label for a tab with no title and no URL."
+  },
+  "treeside_audible_aria": {
+    "message": "이 탭이 오디오를 재생 중입니다.",
+    "description": "Screen-reader label for the speaker icon on an audible tab."
+  },
+  "treeside_expand_aria": {
+    "message": "탭 $1의 브랜치 펼치기",
+    "description": "Screen-reader label for the expand chevron. $1 is the tab id.",
+    "placeholders": { "tabId": { "content": "$1" } }
+  },
+  "treeside_collapse_aria": {
+    "message": "탭 $1의 브랜치 접기",
+    "description": "Screen-reader label for the collapse chevron. $1 is the tab id.",
+    "placeholders": { "tabId": { "content": "$1" } }
+  },
+  "treeside_close_tab_aria": {
+    "message": "이 탭 닫기",
+    "description": "Screen-reader label for the close-tab hover action."
+  },
+  "treeside_close_tab_title": {
+    "message": "탭 닫기",
+    "description": "Title attribute for the close-tab hover action."
+  },
+  "treeside_close_branch_aria": {
+    "message": "이 탭과 $1개 하위 탭 닫기",
+    "description": "Screen-reader label for the close-branch hover action. $1 is the descendant count.",
+    "placeholders": { "count": { "content": "$1" } }
+  },
+  "treeside_close_branch_title": {
+    "message": "브랜치 닫기",
+    "description": "Title attribute for the close-branch hover action."
+  },
+  "treeside_group_toggle_aria": {
+    "message": "그룹 전환",
+    "description": "Screen-reader label for the group collapse toggle."
+  },
+  "treeside_group_unnamed": {
+    "message": "이름 없는 그룹",
+    "description": "Fallback label for a tab group with no title."
+  },
+
+  "treeside_search_placeholder": {
+    "message": "제목 또는 URL로 탭 검색...",
+    "description": "Placeholder for the search input."
+  },
+  "treeside_search_aria": {
+    "message": "제목 또는 URL로 탭 필터링",
+    "description": "Accessible label for the search input."
+  },
+  "treeside_search_clear_aria": {
+    "message": "검색 지우기",
+    "description": "Screen-reader label for the search clear button."
+  },
+
+  "treeside_empty_body": {
+    "message": "이 창에 아직 탭이 없습니다.",
+    "description": "Empty-state body text."
+  },
+  "treeside_empty_hint": {
+    "message": "탭을 열어 시작하세요.",
+    "description": "Empty-state hint text."
+  },
+
+  "treeside_confirm_title": {
+    "message": "$1개 탭을 닫으시겠어요?",
+    "description": "Confirm dialog title. $1 is the total count (parent + descendants).",
+    "placeholders": { "count": { "content": "$1" } }
+  },
+  "treeside_confirm_body": {
+    "message": "부모 탭과 $1개의 하위 탭이 닫힙니다. 되돌릴 수 없습니다.",
+    "description": "Confirm dialog body. $1 is the total count.",
+    "placeholders": { "count": { "content": "$1" } }
+  },
+  "treeside_confirm_ok": {
+    "message": "모두 닫기",
+    "description": "Confirm dialog confirm button."
+  },
+  "treeside_confirm_cancel": {
+    "message": "취소",
+    "description": "Confirm dialog cancel button."
+  },
+
+  "treeside_options_nav_aria": {
+    "message": "TreeSide 옵션 탐색",
+    "description": "Accessible label for the options sidebar navigation."
+  },
+  "treeside_options_nav_general": {
+    "message": "일반",
+    "description": "Sidebar nav label for the General section."
+  },
+  "treeside_options_nav_license": {
+    "message": "Pro 라이선스",
+    "description": "Sidebar nav label for the Pro License section."
+  },
+  "treeside_options_nav_data": {
+    "message": "데이터",
+    "description": "Sidebar nav label for the Data section."
+  },
+  "treeside_options_nav_about": {
+    "message": "정보",
+    "description": "Sidebar nav label for the About section."
+  },
+  "treeside_options_footer_built_by": {
+    "message": "zovo.one 제작",
+    "description": "Footer link in the options page."
+  },
+
+  "treeside_options_title_general": {
+    "message": "모양",
+    "description": "Title for the General section."
+  },
+  "treeside_options_theme_label": {
+    "message": "테마",
+    "description": "Options label for the theme segmented control."
+  },
+  "treeside_options_theme_system": {
+    "message": "시스템",
+    "description": "Options theme choice: follow the OS setting."
+  },
+  "treeside_options_theme_light": {
+    "message": "밝게",
+    "description": "Options theme choice: force light."
+  },
+  "treeside_options_theme_dark": {
+    "message": "어둡게",
+    "description": "Options theme choice: force dark."
+  },
+  "treeside_options_theme_aria": {
+    "message": "테마 설정",
+    "description": "Accessible radiogroup label for the theme segmented control."
+  },
+  "treeside_options_accent_label": {
+    "message": "강조 색상",
+    "description": "Options label for the accent segmented control."
+  },
+  "treeside_options_accent_violet": {
+    "message": "보라색",
+    "description": "Options accent choice: violet (free default)."
+  },
+  "treeside_options_accent_teal": {
+    "message": "청록색",
+    "description": "Options accent choice: teal (Pro)."
+  },
+  "treeside_options_accent_amber": {
+    "message": "호박색",
+    "description": "Options accent choice: amber (Pro)."
+  },
+  "treeside_options_accent_aria": {
+    "message": "강조 색상 설정",
+    "description": "Accessible radiogroup label for the accent segmented control."
+  },
+  "treeside_options_pro_hint": {
+    "message": "Pro 기능입니다.",
+    "description": "Inline hint on locked Pro affordances."
+  },
+  "treeside_options_pro_cta": {
+    "message": "Pro 플랜 보기",
+    "description": "CTA link text to the pricing page."
+  },
+  "treeside_options_row_height_label": {
+    "message": "행 높이",
+    "description": "Options label for the row height segmented control."
+  },
+  "treeside_options_row_height_comfortable": {
+    "message": "여유",
+    "description": "Options row-height choice: 32px (default)."
+  },
+  "treeside_options_row_height_compact": {
+    "message": "컴팩트",
+    "description": "Options row-height choice: 28px."
+  },
+  "treeside_options_row_height_aria": {
+    "message": "행 높이 설정",
+    "description": "Accessible radiogroup label for the row height segmented control."
+  },
+  "treeside_options_confirm_threshold_label": {
+    "message": "이 개수 이상의 탭이 있는 브랜치를 닫기 전에 확인",
+    "description": "Options label for the confirm-threshold slider."
+  },
+
+  "treeside_options_title_license": {
+    "message": "Zovo Pro 키 활성화 또는 제거",
+    "description": "Title for the Pro License section."
+  },
+  "treeside_options_sub_license": {
+    "message": "Pro 라이선스는 영구적인 트리 스냅샷, 트리 템플릿, 사용자 지정 테마, 키보드 파워 도구를 잠금 해제합니다. 한 번의 결제로 이 확장 프로그램의 Pro를 영원히 활성화합니다.",
+    "description": "Subtitle for the Pro License section."
+  },
+  "treeside_options_license_active_prefix": {
+    "message": "Pro 활성.",
+    "description": "Prefix shown when a Pro license is active."
+  },
+  "treeside_options_license_active_lifetime": {
+    "message": "평생 라이선스.",
+    "description": "License status line for a lifetime license."
+  },
+  "treeside_options_license_deactivate": {
+    "message": "비활성화",
+    "description": "Button: deactivate the current license."
+  },
+  "treeside_options_license_deactivated": {
+    "message": "라이선스가 비활성화되었습니다. 무료 요금제로 돌아갑니다.",
+    "description": "Status message after the user deactivates a license."
+  },
+  "treeside_options_license_key_label": {
+    "message": "라이선스 키",
+    "description": "Accessible label for the license-key input."
+  },
+  "treeside_options_license_placeholder": {
+    "message": "ZOVO-XXXX-XXXX-XXXX-XXXX",
+    "description": "Placeholder text for the license-key input."
+  },
+  "treeside_options_license_activate": {
+    "message": "활성화",
+    "description": "Button: activate the entered license key."
+  },
+  "treeside_options_license_verifying": {
+    "message": "확인 중...",
+    "description": "Button busy state while the license key is being verified."
+  },
+  "treeside_options_license_empty": {
+    "message": "먼저 라이선스 키를 입력하세요.",
+    "description": "Error shown when activating with an empty input."
+  },
+  "treeside_options_license_activated": {
+    "message": "라이선스가 활성화되었습니다. Pro가 잠금 해제되었습니다.",
+    "description": "Success message after activation."
+  },
+  "treeside_options_license_failed": {
+    "message": "이 키는 확인되지 않았습니다. 키를 확인하고 다시 시도하세요.",
+    "description": "Error shown when the license server rejects the key."
+  },
+  "treeside_options_license_error": {
+    "message": "확인에 실패했습니다. 잠시 후 다시 시도하세요.",
+    "description": "Error shown when the license verify endpoint is unreachable."
+  },
+  "treeside_options_license_buy": {
+    "message": "Pro 플랜 보기",
+    "description": "Link to the pricing page."
+  },
+  "treeside_options_license_refund": {
+    "message": "14일 환불 보장. Pro의 가치가 없다면 질문 없이 환불해 드립니다.",
+    "description": "Refund promise under the Pro License section."
+  },
+
+  "treeside_options_title_data": {
+    "message": "데이터는 이 기기에 머무릅니다",
+    "description": "Title for the Data section."
+  },
+  "treeside_options_sub_data": {
+    "message": "TreeSide가 이 기기에 저장한 모든 데이터를 내보내거나 삭제하세요. 클라우드 없음, 동기화 없음.",
+    "description": "Subtitle for the Data section."
+  },
+  "treeside_options_data_export": {
+    "message": "내 데이터 내보내기",
+    "description": "Button: export stored preferences and overrides to a JSON file."
+  },
+  "treeside_options_data_delete": {
+    "message": "모든 데이터 삭제",
+    "description": "Button: delete everything TreeSide has stored on this device."
+  },
+  "treeside_options_privacy_delete_confirm": {
+    "message": "이 기기에서 모든 TreeSide 데이터를 삭제하시겠어요? 되돌릴 수 없습니다.",
+    "description": "window.confirm prompt before deleting all data."
+  },
+  "treeside_options_privacy_delete_ok": {
+    "message": "이 기기에서 모든 TreeSide 데이터가 삭제되었습니다.",
+    "description": "Success message after deleting all data."
+  },
+  "treeside_options_privacy_delete_err": {
+    "message": "삭제에 실패했습니다. 다시 시도하세요.",
+    "description": "Error shown when the delete operation fails."
+  },
+
+  "treeside_options_title_about": {
+    "message": "TreeSide 정보",
+    "description": "Title for the About section."
+  },
+  "treeside_options_about_disclaimer": {
+    "message": "TreeSide는 Zovo의 독립적인 도구입니다. Chrome이 이미 유지 관리하는 탭 메타데이터(제목, URL, opener 관계, 그룹 멤버십)만 읽어 트리를 그리고 조작합니다. 페이지 콘텐츠를 읽지 않고, 스크립트를 주입하지 않으며, 명시적으로 라이선스 키를 입력하는 경우를 제외하고 네트워크 요청을 하지 않습니다.",
+    "description": "Independence and privacy disclaimer in the About section."
+  },
+
+  "treeside_onb_eyebrow": {
+    "message": "TreeSide",
+    "description": "Brand eyebrow shown at the top of every onboarding page."
+  },
+  "treeside_onb_page1_heading": {
+    "message": "탭을 트리로",
+    "description": "Onboarding page 1 main heading."
+  },
+  "treeside_onb_page1_sub": {
+    "message": "TreeSide는 현재 창의 탭을 각 탭의 opener를 기반으로 접을 수 있는 부모-자식 트리로 표시합니다. 콘텐츠 스크립트 없음, 호스트 권한 없음, 페이지 읽기 없음."
+  },
+  "treeside_onb_page2_heading": {
+    "message": "드래그로 부모 변경",
+    "description": "Onboarding page 2 main heading."
+  },
+  "treeside_onb_page2_sub": {
+    "message": "아무 탭이나 다른 탭 위로 드래그하여 자식으로 만드세요. 부모 변경은 세션 간 유지되므로 구축한 계층이 그대로 남습니다."
+  },
+  "treeside_onb_page3_heading": {
+    "message": "검색과 접기",
+    "description": "Onboarding page 3 main heading."
+  },
+  "treeside_onb_page3_sub": {
+    "message": "제목 또는 URL로 부분 일치 퍼지 검색. 지금 필요 없는 브랜치는 접어 두세요. 돌아와도 접힌 상태로 남습니다."
+  },
+  "treeside_onb_page4_heading": {
+    "message": "브랜치를 안전하게 닫기",
+    "description": "Onboarding page 4 main heading."
+  },
+  "treeside_onb_page4_sub": {
+    "message": "한 번의 클릭으로 탭과 모든 하위 탭을 닫습니다. 다섯 개 이상의 탭이 있는 브랜치는 먼저 확인을 요청합니다."
+  },
+  "treeside_onb_page5_heading": {
+    "message": "Pro: 스냅샷, 템플릿, 테마",
+    "description": "Onboarding page 5 main heading."
+  },
+  "treeside_onb_page5_sub": {
+    "message": "무료 요금제는 위의 모든 것을 영원히 제공합니다. Pro는 크래시 복구 스냅샷, 트리 템플릿, 사용자 지정 테마, 키보드 파워 도구를 추가합니다. 한 번의 결제, 영원히 활성."
+  },
+  "treeside_onb_skip": {
+    "message": "설정 건너뛰기",
+    "description": "Skip link in the onboarding footer."
+  },
+  "treeside_onb_back": {
+    "message": "뒤로",
+    "description": "Back button in the onboarding footer."
+  },
+  "treeside_onb_next": {
+    "message": "다음",
+    "description": "Next button in the onboarding footer."
+  },
+  "treeside_onb_done": {
+    "message": "완료",
+    "description": "Done button in the onboarding footer (final page)."
+  },
+  "treeside_onb_step_aria": {
+    "message": "온보딩 단계",
+    "description": "Accessible label for the onboarding step indicator."
+  },
+  "treeside_onb_step_position_aria": {
+    "message": "단계 $1",
+    "description": "Accessible label for an individual step dot. $1 is the 1-based page index.",
+    "placeholders": { "page": { "content": "$1" } }
+  },
+  "treeside_onb_page_of": {
+    "message": "$1 / $2",
+    "description": "Page indicator text in the onboarding footer. $1 is current page, $2 is total pages.",
+    "placeholders": {
+      "current": { "content": "$1" },
+      "total": { "content": "$2" }
+    }
+  }
+}

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy · TreeSide</title>
+  <link rel="stylesheet" href="../styles/treeside-base.css" />
+</head>
+<body class="treeside-legal">
+  <main class="treeside-legal__container">
+    <h1>Privacy Policy · TreeSide</h1>
+    <p class="treeside-legal__updated">Last updated: 2026-07-21</p>
+
+    <section>
+      <h2>Summary</h2>
+      <p>
+        TreeSide is a tree-style vertical-tabs side panel for Chrome. It reads
+        only the tab metadata Chrome already maintains (title, URL, opener
+        relationship, group membership) to draw and manipulate the tree. It
+        never reads page content, never injects scripts into pages, and never
+        makes a network request except when you explicitly enter a license key.
+        All settings, overrides, and collapse state stay on this device in
+        Chrome extension storage.
+      </p>
+    </section>
+
+    <section>
+      <h2>Permissions and why each one is required</h2>
+      <ul>
+        <li>
+          <code>tabs</code>. Reads tab metadata (title, URL, openerTabId,
+          groupId, active state, audible state). Used to build and update the
+          tree. The permission also allows the user-initiated actions
+          (click-to-focus, middle-click-to-close, close-branch) to call
+          <code>chrome.tabs.update</code> and <code>chrome.tabs.remove</code>.
+          TreeSide never reads page DOM via this permission.
+        </li>
+        <li>
+          <code>tabGroups</code>. Reads and edits Chrome's native tab groups
+          (color, name, membership). The group's color pip and name render in
+          the tree; the user can rename/recolor via Chrome's native UI.
+        </li>
+        <li>
+          <code>sidePanel</code>. Opens the side panel surface — the entire
+          product UI lives in Chrome's native Side Panel.
+        </li>
+        <li>
+          <code>storage</code>. Persists user preferences (theme, accent, row
+          height, confirm threshold), Pro license state (only if you have Pro),
+          the manual reparent overrides map, and the collapse set.
+          <code>storage.local</code> only — never <code>storage.sync</code>.
+        </li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>What we never request</h2>
+      <p>
+        TreeSide never requests <code>host_permissions</code>,
+        <code>activeTab</code>, <code>scripting</code>,
+        <code>webRequest</code>, <code>declarativeNetRequest</code>,
+        <code>notifications</code>, <code>clipboardWrite</code>,
+        <code>identity</code>, <code>&lt;all_urls&gt;</code> (in matches),
+        <code>optional_host_permissions</code>, <code>history</code>,
+        <code>cookies</code>, or <code>alarms</code>.
+      </p>
+    </section>
+
+    <section>
+      <h2>What we read</h2>
+      <p>
+        TreeSide reads only the tab metadata that Chrome maintains:
+        <code>tab.id</code>, <code>tab.url</code>, <code>tab.title</code>,
+        <code>tab.openerTabId</code>, <code>tab.groupId</code>,
+        <code>tab.active</code>, <code>tab.audible</code>,
+        <code>tab.pinned</code>, <code>tab.favIconUrl</code>, and
+        <code>tab.windowId</code>. It never reads the DOM of any web page. It
+        has no content scripts. It cannot read your passwords, form data,
+        browsing history, cookies, or page text.
+      </p>
+    </section>
+
+    <section>
+      <h2>What we store</h2>
+      <ul>
+        <li>
+          <code>storage.local.treeside_settings</code>. Theme, accent, row
+          height, confirm threshold, search weights.
+        </li>
+        <li>
+          <code>storage.local.treeside_overrides</code>. The manual reparent
+          map (<code>tabId → newParentId</code>) so the tree survives Chrome
+          restarts.
+        </li>
+        <li>
+          <code>storage.local.treeside_collapse</code>. The set of collapsed
+          tab ids so collapsed branches stay collapsed across sessions.
+        </li>
+        <li>
+          <code>storage.local.treeside_license</code>. Pro license state (only
+          if you have entered a license key).
+        </li>
+        <li>
+          <code>storage.local.treeside_seen_onboarding</code>. Boolean — has
+          the user dismissed onboarding?
+        </li>
+        <li>
+          <code>storage.local.treeside_funnel_events</code>. A rolling
+          100-event log of product interactions (panel-opened, reparent,
+          collapse, search, close-branch) kept only on this device for
+          product-improvement purposes. No page content. No PII. Never sent
+          anywhere.
+        </li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>What we transmit</h2>
+      <p>
+        <strong>Nothing, by default.</strong> The extension makes zero network
+        requests during normal use. The only network request the extension
+        ever makes is a POST to the Zovo license Edge Function when you enter
+        a license key in Options. The request body is your license key and the
+        extension's product ID. No page content, no browsing history, no tab
+        URLs, and no profile data is ever sent. If you never enter a license
+        key, the extension never opens a network connection.
+      </p>
+    </section>
+
+    <section>
+      <h2>Your choices</h2>
+      <p>
+        You can change theme, accent, row height, and confirm threshold from
+        the Options page. You can export or delete all local data from the
+        Data section of Options. Uninstalling the extension deletes all local
+        data.
+      </p>
+    </section>
+
+    <section>
+      <h2>Contact</h2>
+      <p>
+        Questions: <a href="mailto:support@zovo.one">support@zovo.one</a> ·
+        <a href="https://zovo.one">https://zovo.one</a>
+      </p>
+    </section>
+  </main>
+</body>
+</html>

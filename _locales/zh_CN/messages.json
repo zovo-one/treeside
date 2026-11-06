@@ -1,0 +1,8 @@
+{
+  "extName": {
+    "message": "TreeSide - Chrome 侧边栏中的垂直标签页"
+  },
+  "extDesc": {
+    "message": "在 Chrome 侧边栏中以树状结构管理垂直标签页。拖动即可重新归属、折叠分支、模糊搜索标签页。注重隐私的设计。"
+  }
+}

@@ -1,0 +1,397 @@
+{
+  "extName": {
+    "message": "TreeSide - Вертикальные вкладки в боковой панели Chrome",
+    "description": "Extension name shown in chrome://extensions and the Chrome Web Store listing title."
+  },
+  "extDesc": {
+    "message": "Дерево вкладок в боковой панели Chrome. Перетащите для переподчинения, сворачивайте ветви, нечёткий поиск. Приватно по дизайну.",
+    "description": "Extension description shown in chrome://extensions and the Chrome Web Store listing short summary (<=132 chars)."
+  },
+  "actionTitle": {
+    "message": "TreeSide - Открыть дерево вкладок",
+    "description": "Tooltip for the toolbar action icon."
+  },
+  "permTabsJustification": {
+    "message": "Читает метаданные вкладок (заголовок, URL, opener, группу), чтобы строить и обновлять дерево. Обеспечивает клик-для-фокуса, клик-средней-кнопкой-закрыть и закрыть-ветвь. Без чтения DOM страницы.",
+    "description": "CWS reviewer justification for the tabs permission."
+  },
+  "permTabGroupsJustification": {
+    "message": "Читает и редактирует собственные группы вкладок Chrome (цвет, название, состав), чтобы дерево показывало заголовки групп и сохраняло идентичность групп при переподчинении.",
+    "description": "CWS reviewer justification for the tabGroups permission."
+  },
+  "permSidePanelJustification": {
+    "message": "Открывает поверхность боковой панели. Весь интерфейс продукта живёт в собственной боковой панели Chrome.",
+    "description": "CWS reviewer justification for the sidePanel permission."
+  },
+  "permStorageJustification": {
+    "message": "Сохраняет пользовательские настройки, ручные переподчинения и состояние сворачивания в storage.local. Без содержимого страниц. Без синхронизации.",
+    "description": "CWS reviewer justification for the storage permission."
+  },
+
+  "treeside_loading": {
+    "message": "Загрузка дерева вкладок...",
+    "description": "Side panel loading state before bootstrap completes."
+  },
+  "treeside_panel_aria_label": {
+    "message": "Дерево вкладок TreeSide",
+    "description": "Accessible label for the tree root."
+  },
+  "treeside_untitled_tab": {
+    "message": "Вкладка без названия",
+    "description": "Fallback label for a tab with no title and no URL."
+  },
+  "treeside_audible_aria": {
+    "message": "Эта вкладка воспроизводит звук.",
+    "description": "Screen-reader label for the speaker icon on an audible tab."
+  },
+  "treeside_expand_aria": {
+    "message": "Развернуть ветвь для вкладки $1",
+    "description": "Screen-reader label for the expand chevron. $1 is the tab id.",
+    "placeholders": { "tabId": { "content": "$1" } }
+  },
+  "treeside_collapse_aria": {
+    "message": "Свернуть ветвь для вкладки $1",
+    "description": "Screen-reader label for the collapse chevron. $1 is the tab id.",
+    "placeholders": { "tabId": { "content": "$1" } }
+  },
+  "treeside_close_tab_aria": {
+    "message": "Закрыть эту вкладку",
+    "description": "Screen-reader label for the close-tab hover action."
+  },
+  "treeside_close_tab_title": {
+    "message": "Закрыть вкладку",
+    "description": "Title attribute for the close-tab hover action."
+  },
+  "treeside_close_branch_aria": {
+    "message": "Закрыть эту вкладку и её $1 потомков",
+    "description": "Screen-reader label for the close-branch hover action. $1 is the descendant count.",
+    "placeholders": { "count": { "content": "$1" } }
+  },
+  "treeside_close_branch_title": {
+    "message": "Закрыть ветвь",
+    "description": "Title attribute for the close-branch hover action."
+  },
+  "treeside_group_toggle_aria": {
+    "message": "Переключить группу",
+    "description": "Screen-reader label for the group collapse toggle."
+  },
+  "treeside_group_unnamed": {
+    "message": "Группа без названия",
+    "description": "Fallback label for a tab group with no title."
+  },
+
+  "treeside_search_placeholder": {
+    "message": "Поиск вкладок по названию или URL...",
+    "description": "Placeholder for the search input."
+  },
+  "treeside_search_aria": {
+    "message": "Фильтровать вкладки по названию или URL",
+    "description": "Accessible label for the search input."
+  },
+  "treeside_search_clear_aria": {
+    "message": "Очистить поиск",
+    "description": "Screen-reader label for the search clear button."
+  },
+
+  "treeside_empty_body": {
+    "message": "В этом окне пока нет вкладок.",
+    "description": "Empty-state body text."
+  },
+  "treeside_empty_hint": {
+    "message": "Откройте вкладку, чтобы начать.",
+    "description": "Empty-state hint text."
+  },
+
+  "treeside_confirm_title": {
+    "message": "Закрыть $1 вкладок?",
+    "description": "Confirm dialog title. $1 is the total count (parent + descendants).",
+    "placeholders": { "count": { "content": "$1" } }
+  },
+  "treeside_confirm_body": {
+    "message": "Это закроет родительскую вкладку и её $1 потомков. Действие необратимо.",
+    "description": "Confirm dialog body. $1 is the total count.",
+    "placeholders": { "count": { "content": "$1" } }
+  },
+  "treeside_confirm_ok": {
+    "message": "Закрыть все",
+    "description": "Confirm dialog confirm button."
+  },
+  "treeside_confirm_cancel": {
+    "message": "Отмена",
+    "description": "Confirm dialog cancel button."
+  },
+
+  "treeside_options_nav_aria": {
+    "message": "Навигация по настройкам TreeSide",
+    "description": "Accessible label for the options sidebar navigation."
+  },
+  "treeside_options_nav_general": {
+    "message": "Общие",
+    "description": "Sidebar nav label for the General section."
+  },
+  "treeside_options_nav_license": {
+    "message": "Лицензия Pro",
+    "description": "Sidebar nav label for the Pro License section."
+  },
+  "treeside_options_nav_data": {
+    "message": "Данные",
+    "description": "Sidebar nav label for the Data section."
+  },
+  "treeside_options_nav_about": {
+    "message": "О продукте",
+    "description": "Sidebar nav label for the About section."
+  },
+  "treeside_options_footer_built_by": {
+    "message": "Создано zovo.one",
+    "description": "Footer link in the options page."
+  },
+
+  "treeside_options_title_general": {
+    "message": "Оформление",
+    "description": "Title for the General section."
+  },
+  "treeside_options_theme_label": {
+    "message": "Тема",
+    "description": "Options label for the theme segmented control."
+  },
+  "treeside_options_theme_system": {
+    "message": "Системная",
+    "description": "Options theme choice: follow the OS setting."
+  },
+  "treeside_options_theme_light": {
+    "message": "Светлая",
+    "description": "Options theme choice: force light."
+  },
+  "treeside_options_theme_dark": {
+    "message": "Тёмная",
+    "description": "Options theme choice: force dark."
+  },
+  "treeside_options_theme_aria": {
+    "message": "Предпочтение темы",
+    "description": "Accessible radiogroup label for the theme segmented control."
+  },
+  "treeside_options_accent_label": {
+    "message": "Акцентный цвет",
+    "description": "Options label for the accent segmented control."
+  },
+  "treeside_options_accent_violet": {
+    "message": "Фиолетовый",
+    "description": "Options accent choice: violet (free default)."
+  },
+  "treeside_options_accent_teal": {
+    "message": "Бирюзовый",
+    "description": "Options accent choice: teal (Pro)."
+  },
+  "treeside_options_accent_amber": {
+    "message": "Янтарный",
+    "description": "Options accent choice: amber (Pro)."
+  },
+  "treeside_options_accent_aria": {
+    "message": "Предпочтение акцентного цвета",
+    "description": "Accessible radiogroup label for the accent segmented control."
+  },
+  "treeside_options_pro_hint": {
+    "message": "Функция Pro.",
+    "description": "Inline hint on locked Pro affordances."
+  },
+  "treeside_options_pro_cta": {
+    "message": "Посмотреть планы Pro",
+    "description": "CTA link text to the pricing page."
+  },
+  "treeside_options_row_height_label": {
+    "message": "Высота строки",
+    "description": "Options label for the row height segmented control."
+  },
+  "treeside_options_row_height_comfortable": {
+    "message": "Просторная",
+    "description": "Options row-height choice: 32px (default)."
+  },
+  "treeside_options_row_height_compact": {
+    "message": "Компактная",
+    "description": "Options row-height choice: 28px."
+  },
+  "treeside_options_row_height_aria": {
+    "message": "Предпочтение высоты строки",
+    "description": "Accessible radiogroup label for the row height segmented control."
+  },
+  "treeside_options_confirm_threshold_label": {
+    "message": "Подтверждать закрытие ветвей с таким числом вкладок или больше",
+    "description": "Options label for the confirm-threshold slider."
+  },
+
+  "treeside_options_title_license": {
+    "message": "Активировать или удалить ключ Zovo Pro",
+    "description": "Title for the Pro License section."
+  },
+  "treeside_options_sub_license": {
+    "message": "Лицензия Pro открывает постоянные снимки дерева, шаблоны деревьев, пользовательские темы и мощные инструменты для клавиатуры. Один платеж активирует Pro в этом расширении навсегда.",
+    "description": "Subtitle for the Pro License section."
+  },
+  "treeside_options_license_active_prefix": {
+    "message": "Pro активна.",
+    "description": "Prefix shown when a Pro license is active."
+  },
+  "treeside_options_license_active_lifetime": {
+    "message": "Бессрочная лицензия.",
+    "description": "License status line for a lifetime license."
+  },
+  "treeside_options_license_deactivate": {
+    "message": "Деактивировать",
+    "description": "Button: deactivate the current license."
+  },
+  "treeside_options_license_deactivated": {
+    "message": "Лицензия деактивирована. Возврат к бесплатному тарифу.",
+    "description": "Status message after the user deactivates a license."
+  },
+  "treeside_options_license_key_label": {
+    "message": "Ключ лицензии",
+    "description": "Accessible label for the license-key input."
+  },
+  "treeside_options_license_placeholder": {
+    "message": "ZOVO-XXXX-XXXX-XXXX-XXXX",
+    "description": "Placeholder text for the license-key input."
+  },
+  "treeside_options_license_activate": {
+    "message": "Активировать",
+    "description": "Button: activate the entered license key."
+  },
+  "treeside_options_license_verifying": {
+    "message": "Проверка...",
+    "description": "Button busy state while the license key is being verified."
+  },
+  "treeside_options_license_empty": {
+    "message": "Сначала введите ключ лицензии.",
+    "description": "Error shown when activating with an empty input."
+  },
+  "treeside_options_license_activated": {
+    "message": "Лицензия активирована. Pro разблокирован.",
+    "description": "Success message after activation."
+  },
+  "treeside_options_license_failed": {
+    "message": "Этот ключ не прошёл проверку. Проверьте ключ и попробуйте снова.",
+    "description": "Error shown when the license server rejects the key."
+  },
+  "treeside_options_license_error": {
+    "message": "Проверка не удалась. Попробуйте снова через мгновение.",
+    "description": "Error shown when the license verify endpoint is unreachable."
+  },
+  "treeside_options_license_buy": {
+    "message": "Посмотреть планы Pro",
+    "description": "Link to the pricing page."
+  },
+  "treeside_options_license_refund": {
+    "message": "Гарантия возврата средств 14 дней. Если Pro не оправдает ожиданий, мы вернём деньги без вопросов.",
+    "description": "Refund promise under the Pro License section."
+  },
+
+  "treeside_options_title_data": {
+    "message": "Ваши данные остаются на этом устройстве",
+    "description": "Title for the Data section."
+  },
+  "treeside_options_sub_data": {
+    "message": "Экспортируйте или удалите всё, что TreeSide хранит на этом устройстве. Без облака, без синхронизации.",
+    "description": "Subtitle for the Data section."
+  },
+  "treeside_options_data_export": {
+    "message": "Экспортировать мои данные",
+    "description": "Button: export stored preferences and overrides to a JSON file."
+  },
+  "treeside_options_data_delete": {
+    "message": "Удалить все данные",
+    "description": "Button: delete everything TreeSide has stored on this device."
+  },
+  "treeside_options_privacy_delete_confirm": {
+    "message": "Удалить все данные TreeSide с этого устройства? Действие необратимо.",
+    "description": "window.confirm prompt before deleting all data."
+  },
+  "treeside_options_privacy_delete_ok": {
+    "message": "Все данные TreeSide удалены с этого устройства.",
+    "description": "Success message after deleting all data."
+  },
+  "treeside_options_privacy_delete_err": {
+    "message": "Удаление не удалось. Попробуйте снова.",
+    "description": "Error shown when the delete operation fails."
+  },
+
+  "treeside_options_title_about": {
+    "message": "О TreeSide",
+    "description": "Title for the About section."
+  },
+  "treeside_options_about_disclaimer": {
+    "message": "TreeSide - независимый инструмент от Zovo. Он читает только метаданные вкладок, которые Chrome уже поддерживает (заголовок, URL, связь с opener, принадлежность к группе), чтобы рисовать и управлять деревом. Он никогда не читает содержимое страниц, никогда не внедряет скрипты и никогда не выполняет сетевых запросов, кроме случаев, когда вы явно вводите ключ лицензии.",
+    "description": "Independence and privacy disclaimer in the About section."
+  },
+
+  "treeside_onb_eyebrow": {
+    "message": "TreeSide",
+    "description": "Brand eyebrow shown at the top of every onboarding page."
+  },
+  "treeside_onb_page1_heading": {
+    "message": "Ваши вкладки в виде дерева",
+    "description": "Onboarding page 1 main heading."
+  },
+  "treeside_onb_page1_sub": {
+    "message": "TreeSide показывает вкладки текущего окна как сворачиваемое дерево родитель-потомок, построенное по opener каждой вкладки. Без скриптов содержимого, без хост-разрешений, без чтения страниц."
+  },
+  "treeside_onb_page2_heading": {
+    "message": "Перетащите для переподчинения",
+    "description": "Onboarding page 2 main heading."
+  },
+  "treeside_onb_page2_sub": {
+    "message": "Перетащите любую вкладку на другую, чтобы сделать её дочерней. Ваши переподчинения сохраняются между сессиями, поэтому построенная вами иерархия остаётся на месте."
+  },
+  "treeside_onb_page3_heading": {
+    "message": "Поиск и сворачивание",
+    "description": "Onboarding page 3 main heading."
+  },
+  "treeside_onb_page3_sub": {
+    "message": "Нечёткий поиск по подпоследовательностям в названии или URL. Сворачивайте ветви, которые сейчас не нужны; они остаются свёрнутыми после возвращения."
+  },
+  "treeside_onb_page4_heading": {
+    "message": "Безопасно закрывайте ветви",
+    "description": "Onboarding page 4 main heading."
+  },
+  "treeside_onb_page4_sub": {
+    "message": "Один клик закрывает вкладку и всех её потомков. Ветви из пяти и более вкладок сначала запрашивают подтверждение."
+  },
+  "treeside_onb_page5_heading": {
+    "message": "Pro: снимки, шаблоны, темы",
+    "description": "Onboarding page 5 main heading."
+  },
+  "treeside_onb_page5_sub": {
+    "message": "Бесплатный тариф включает всё вышеперечисленное навсегда. Pro добавляет снимки восстановления после сбоев, шаблоны деревьев, пользовательские темы и мощные инструменты для клавиатуры. Один платеж; активен навсегда."
+  },
+  "treeside_onb_skip": {
+    "message": "Пропустить настройку",
+    "description": "Skip link in the onboarding footer."
+  },
+  "treeside_onb_back": {
+    "message": "Назад",
+    "description": "Back button in the onboarding footer."
+  },
+  "treeside_onb_next": {
+    "message": "Далее",
+    "description": "Next button in the onboarding footer."
+  },
+  "treeside_onb_done": {
+    "message": "Готово",
+    "description": "Done button in the onboarding footer (final page)."
+  },
+  "treeside_onb_step_aria": {
+    "message": "Шаги онбординга",
+    "description": "Accessible label for the onboarding step indicator."
+  },
+  "treeside_onb_step_position_aria": {
+    "message": "Шаг $1",
+    "description": "Accessible label for an individual step dot. $1 is the 1-based page index.",
+    "placeholders": { "page": { "content": "$1" } }
+  },
+  "treeside_onb_page_of": {
+    "message": "$1 из $2",
+    "description": "Page indicator text in the onboarding footer. $1 is current page, $2 is total pages.",
+    "placeholders": {
+      "current": { "content": "$1" },
+      "total": { "content": "$2" }
+    }
+  }
+}
